@@ -55,6 +55,19 @@
 
 ### Támogatott eszközök
 
+Eszközök:
+
++ Asztali számítógépek és laptopok,
++ Telefonok és tabletek
+
+Böngészők:
+
++ Google Chrome,
++ Mozilla Firefox,
++ Microsoft Edge,
++ Safari
++ Opera
+
 ## 5. Funkcionális terv
 
 ### 5.1 Rendszerszereplők
