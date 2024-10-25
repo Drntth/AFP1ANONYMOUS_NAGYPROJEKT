@@ -36,7 +36,13 @@
 
 | ID | Megnevezés | Leírás |
 | --- | --- | --- |
-| K1 | ... | ... |
+| #1 | Regisztráció és bejelentkezés | Felhasználók regisztrálhatnak, bejelentkezhetnek és hozzáférhetnek fiókadataikhoz. |
+| #2 | Termékkategóriák böngészése | A felhasználók kategóriák szerint böngészhetik a számítógép-alkatrészeket. |
+| #3 | Kosár kezelés | A felhasználók termékeket adhatnak a kosárhoz, eltávolíthatják azokat, és módosíthatják a darabszámot. |
+| #4 | Online fizetés | Biztonságos fizetési lehetőségek, például bankkártyás fizetés. |
+| #5 | Adminisztrátori termékkezelés | Az adminisztrátorok új termékeket adhatnak hozzá, illetve módosíthatják és törölhetik azokat. |
+| #6 | Megrendelések nyomon követése | A rendszer biztosítja a megrendelések kezelését, státuszuk követését mind felhasználók, mind adminisztrátorok számára. |
+
 
 ### Nemfunkcionális követelmények
 
