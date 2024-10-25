@@ -48,7 +48,10 @@
 
 | ID | Megnevezés | Leírás |
 | --- | --- | --- |
-| K4 | ... | ... |
+| #1 | Rendelkezésre állás | A webáruháznak legalább 99,5%-os rendelkezésre állást kell biztosítania napi szinten. |
+| #2 | Teljesítmény | Az oldal betöltési ideje nem haladhatja meg a 3 másodpercet az elsődleges oldalak esetén. |
+| #3 | Felhasználói élmény | Az oldal felülete könnyen használható, logikus navigációt és konzisztens megjelenést biztosít. |
+| #4 | Biztonság | 	A felhasználói adatok, tranzakciók biztonságát titkosítás és megfelelő biztonsági protokollok garantálják. |
 
 ### Támogatott eszközök
 
