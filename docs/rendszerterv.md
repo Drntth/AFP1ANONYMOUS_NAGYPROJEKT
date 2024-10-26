@@ -134,6 +134,46 @@ Böngészők:
 
 ## 11. Tesztterv
 
+1. Egységtesztelés (*Unit testing*):
+   
+   + **Célja:** Az egyes funkciók és modulok helyes működésének ellenőrzése külön-külön.
+   + **Példa:** Az egyes funkciók (pl. regisztráció, termék hozzáadása kosárba) helyes működésének tesztelése külön-külön.
+
+2. Integrációs tesztelés (*Integration testing*):
+
+   + **Célja:** Annak ellenőrzése, hogy az egységek hogyan működnek együtt a rendszeren belül.
+   + **Példa:** Regisztráció és bejelentkezés összekapcsolt működésének, illetve kosár és fizetési rendszer közötti           kommunikáció tesztelése.
+
+3. Rendszertesztelés (*System testing*):
+
+   + **Célja:** Az egész rendszer működésének tesztelése annak érdekében, hogy minden funkció helyesen működjön együttesen.
+   + **Példa:** A teljes vásárlási folyamat tesztelése, a böngészéstől a fizetésig.
+
+4. Funkcionális tesztelés (*Functional testing*):
+
+   + **Célja:** Az összes üzleti funkció tesztelése a specifikáció szerint.
+   + **Példa:** Termékek kereshetőségének, kategóriák közötti szűrésének és adminisztrációs műveletek ellenőrzése.
+
+5. Terheléses tesztelés (*Performance testing*):
+
+   + **Célja:** A rendszer teljesítőképességének tesztelése nagy felhasználói terhelés mellett (például JMeter-rel).
+   + **Példa:** Az oldal teljesítményének vizsgálata magas számú egyidejű felhasználó esetén.
+
+6. Biztonsági tesztelés (*Security testing*):
+
+   + **Célja:** Az adatvédelmi és biztonsági előírások teljesülésének vizsgálata.
+   + **Példa:** A bejelentkezési adatok titkosításának és a fizetési folyamat biztonságának ellenőrzése.
+
+### Konkrét tesztesetek
+
+| ID | Teszt típus | Modul | Leírás | Elvárt eredmény |
+| ---| --- | --- | --- | --- |
+| #1 | Funkcionális teszt | Regisztráció | Felhasználó sikeresen regisztrál | Új felhasználó létrejön |
+| #2 | Egységteszt | Kosár | Termék kosárba helyezése | Termék megjelenik a kosárban |
+| #3 | Integrációs teszt | Fizetés | Kosárban lévő termékek kifizetése | Sikeres fizetés és visszaigazolás |
+| #4 | Terheléses teszt | Weboldal betöltés | Az oldal terhelés alatt is gyorsan betölt | Az oldal 3 másodperc alatt betölt |
+| #5 | Biztonsági teszt | Bejelentkezés | Rossz jelszó megadása | Hibaüzenet jelenik meg |
+
 ## 12. Telepítési terv
 
 Fizikai telepítési terv: 
