@@ -76,20 +76,38 @@ Böngészők:
 
    + Nem regisztrált vásárlók:
    Böngészhetik a termékeket, kereshetnek a kategóriák között, és megtekinthetik a termékek részletes adatait,
-   de nem tudnak vásárolni vagy a kosarat használni.
+   de **nem tudnak vásárolni** vagy a kosarat használni.
 
    + Regisztrát vásárlók:
-   Hozzáférhetnek minden vásárlással kapcsolatos funkcióhoz,
+   Hozzáférhetnek **minden** vásárlással kapcsolatos funkcióhoz,
    például termékek kosárba helyezéséhez és a fizetési lehetőségekhez.
 
 2. Adminisztrátorok:
 
-Adminisztrátorok: Teljes hozzáféréssel rendelkeznek
-a termékkezeléshez, megrendelés kezeléséhez és felhasználói fiókok kezeléséhez.
+   **Teljes hozzáféréssel** rendelkeznek a termékkezeléshez, megrendelés kezeléséhez és felhasználói fiókok kezeléséhez.
 
 
 
 ### 5.2 Menühierarchiák
+
+ + Nem regisztrált vásárlók esetén:
+
+   - Kiemelt termékek és akciók a **főoldalon**,
+   - Kategóriák szerinti böngészés a **navigációs sávban**
+
+ + Regisztrált vásárlók esetén:
+
+   - Kiemelt termékek és akciók a **főoldalon**,
+   - Kategóriák szerinti böngészés a **navigációs sávban**,
+   - Vásárláskor a **kosaruk tartalmának** megtekintése és szerkesztése
+   - **Profiloldalukon** kezelhetik felhasználói adataikat
+
+ + Adminisztrátori felület: 
+
+   - **Termékkezelés:** Termékek hozzáadása, módosítása, törlése
+   - **Felhasználókezelés:** Felhasználói jogosultságok kezelése, profilok szerkesztése
+
+
 
 ## 6. Fizikai környezet
 
