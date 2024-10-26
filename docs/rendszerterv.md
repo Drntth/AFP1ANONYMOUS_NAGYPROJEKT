@@ -65,12 +65,29 @@ Böngészők:
 + Google Chrome,
 + Mozilla Firefox,
 + Microsoft Edge,
-+ Safari
++ Safari,
 + Opera
 
 ## 5. Funkcionális terv
 
 ### 5.1 Rendszerszereplők
+
+1. Felhasználók (vásárlók):
+
+   + Nem regisztrált vásárlók:
+   Böngészhetik a termékeket, kereshetnek a kategóriák között, és megtekinthetik a termékek részletes adatait,
+   de nem tudnak vásárolni vagy a kosarat használni.
+
+   + Regisztrát vásárlók:
+   Hozzáférhetnek minden vásárlással kapcsolatos funkcióhoz,
+   például termékek kosárba helyezéséhez és a fizetési lehetőségekhez.
+
+2. Adminisztrátorok:
+
+Adminisztrátorok: Teljes hozzáféréssel rendelkeznek
+a termékkezeléshez, megrendelés kezeléséhez és felhasználói fiókok kezeléséhez.
+
+
 
 ### 5.2 Menühierarchiák
 
