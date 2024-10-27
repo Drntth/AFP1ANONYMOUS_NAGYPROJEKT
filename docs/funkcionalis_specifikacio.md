@@ -81,6 +81,12 @@ Az ügyfélszolgálati modul új funkciókat tartalmaz, amelyek egyszerűsítik 
 
 ## 6. Használati esetek
 
+- **ADMIN:** Az Admin feladata a rendszer teljes körű felügyelete. Képes bármely felhasználói szerepkörbe belépni, hogy ellenőrizze a hibamentes működést. Az Admin korlátlan hozzáféréssel rendelkezik az egész rendszerhez, így szabadon módosíthatja a felhasználók profiljait, beleértve a jogosultságokat, szerepköröket, felhasználóneveket és jelszavakat. Emellett új felhasználókat adhat a rendszerhez, illetve eltávolíthat már meglévő felhasználókat. Az Admin kezelheti a termékeket, például új termékeket adhat hozzá, meglévőket módosíthat vagy törölhet.
+
+- **Felhasználó:** A Felhasználó jogában áll az oldalon megjelenő összes termék megtekintése, valamint az interakciók végrehajtása. A Felhasználó regisztrálhat a rendszerbe, bejelentkezhet, termékeket rendelhet, vásárlási kosarat hozhat létre, és értékelheti a termékeket. Az online boltban kereshet a termékek között, és hozzáférhet a vásárlási előzményeihez.
+
+- **Megtekintő:** Az oldalt szabadon látogathatja, elolvashatja a termékekről írt véleményeket, azonban regisztráció nélkül nem tudja értékelni azokat, illetve nem tud személyes adatokat elmenteni későbbi vásárlásokhoz, nem tudja megtekinteni a vásárlási előzményeit.
+
 ## 7. Megfeleltetés, hogyan fedik le a használati eseteket a követelményeket
 
 ## 8. Képernyőtervek
