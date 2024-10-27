@@ -17,6 +17,28 @@ Jelenleg a fejlesztés tervezési fázisban van, amelyben a technológiai követ
 
 ## 2. Vágyálomrendszer leírása
 
+- A célunk egy olyan online platform létrehozása, amely a felhasználók számára kényelmes és intuitív vásárlási élményt nyújt, miközben széleskörű
+ termékkínálattal és versenyképes árakkal vonzza a vásárlókat.
+
+- A webáruház kiemelkedő funkciói között szerepel a részletes termék információk, a kategóriák szerinti keresési lehetőség, az ajánlott termékek
+ megjelenítése, a felhasználói fiókok kezelése, a kosár funkció, a biztonságos fizetési lehetőségek, valamint az adminisztrációs felület, amely a
+ termékek, rendelések és felhasználók kezelését teszi lehetővé.
+
+- A webáruház megvalósításához a következő technológiákat tervezzük alkalmazni: Laravel, MySQL, Laravel Breeze, Blade (Laravel View Engine), Git
+ és Kanban. Ezek a technológiák együttesen biztosítják a webáruház stabilitását, biztonságát, gyorsaságát és skálázhatóságát.
+
+- A vásárlási folyamat egyszerű és áttekinthető, a kosárkezelés intuitív, a fizetési módok biztonságosak, és a rendeléskövetés lehetővé teszi,
+ hogy a felhasználók nyomon követhessék csomagjuk útját. Az adminisztrációs felület átfogó eszközöket biztosít a termékek, kategóriák, rendelések 
+ és ügyfelek kezeléséhez, valamint a webáruház teljesítményének nyomon követéséhez.
+
+- A felhasználói élmény fokozása érdekében a webáruház mobilbarát felülettel, kereső funkcióval is rendelkezik. Az adminisztrációs felület
+ segítségével a webáruház könnyedén kezelhető és fejleszthető. A felhasználók számára számos kényelmi funkciót biztosítunk, mint például a 
+ gyors betöltődés.
+
+- Összefoglalva, az elektronikai webáruházunk célja, hogy a vásárlók számára egy átfogó, felhasználóbarát és biztonságos online vásárlási élményt
+ nyújtson, miközben a legmodernebb technológiák alkalmazásával a piacon meghatározó szereplővé váljon. A folyamatos fejlesztésnek köszönhetően a
+ webáruház képes lesz alkalmazkodni a változó piaci igényekhez és újabb innovációkat bevezetni.
+
 ## 3. Jelenlegi üzleti folyamatok modellje
 1. Üzleti szereplők
 Felhasználó: Az oldal látogatója, aki keres, böngészik, és megtekinti az elérhető termékeket, illetve megrendelést adhat le.
