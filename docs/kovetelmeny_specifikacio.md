@@ -45,6 +45,28 @@ Lefutás: Az ügyfélszolgálat kezeli a vásárlói megkereséseket, válaszol 
 Kimenet: A vásárlók megfelelő segítséget kapnak, és az elégedettség növekszik a gördülékeny ügyféltámogatás révén.
 
 ## 5. Igényelt üzleti folyamatok modellje
+4. Igényelt üzleti folyamatok modellje
+4.1 Üzleti szereplők
+Vásárló: Az oldal látogatói és vásárlói, akik könnyen navigálhatnak, böngészhetik a termékkategóriákat, egyéni ajánlásokat kaphatnak, és gyors vásárlási folyamaton mehetnek végig.
+Adminisztrátor: Felelős a termékek és akciók frissítéséért, valamint az ügyfélszolgálati feladatokért. Az adminisztrátornak egy egyszerű, intuitív felületen lehetősége van termékeket, készleteket és promóciókat kezelni.
+Beszállító: Az oldal termékellátását biztosítja, és közvetlenül is hozzáférhet a készletadatokhoz, hogy időben értesüljön az utánpótlás igényéről.
+Futárszolgálat: Felelős a kiszállításért, értesítéseket küld a vásárlóknak a csomag állapotáról, hogy biztosítva legyen a nyomon követhetőség és a pontos kézbesítés.
+4.2 Üzleti folyamatok
+Termékfeltöltés és automatizált készletkezelés
+
+Az adminisztrátor a termékeket egyszerűen töltheti fel és kezelheti, míg a rendszer figyelmeztetést küld, ha egy adott termék készlete csökken. A beszállítók szintén értesítést kapnak, hogy időben pótolhassák a készleteket.
+Böngészés és személyre szabott ajánlások
+
+A vásárlók fejlett szűrési lehetőségekkel böngészhetnek, és személyre szabott ajánlatokat láthatnak, amelyek az előző kereséseik és vásárlásaik alapján jönnek létre.
+Rendelés és fizetés integrált folyamatban
+
+A vásárlási folyamat gördülékeny, a kosár funkcióval és a biztonságos fizetési rendszerrel. A vásárlók gyorsan végigvihetik a vásárlási lépéseket, és értesítést kapnak a rendelés státuszáról.
+Szállítási értesítések és nyomon követés
+
+A rendelés után a futárszolgálat értesítést küld a vásárlónak a csomag várható érkezéséről. A nyomon követés folyamatos, így a vásárlók naprakész információkat kapnak.
+Ügyfélszolgálati rendszer és visszáru folyamat
+
+Az ügyfélszolgálat modern, gyors válaszlehetőségekkel segíti a vásárlókat, illetve könnyen kezelhető visszaküldési folyamatot biztosít, hogy a vásárlási élmény egyszerű és átlátható maradjon.
 
 ## 6. Követelménylista
 
