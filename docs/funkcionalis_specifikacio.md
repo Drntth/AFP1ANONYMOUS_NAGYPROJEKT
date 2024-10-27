@@ -176,3 +176,18 @@ Az ügyfélszolgálati modul új funkciókat tartalmaz, amelyek egyszerűsítik 
 
 
 ## 11 Fogalomszótár
+
+- **Webáruház**: Online platform, ahol termékek vásárolhatók.
+- **Laravel**: PHP-alapú webfejlesztő keretrendszer.
+- **MySQL**: Relációs adatbázis-kezelő rendszer.
+- **Frontend**: A felhasználói felület, amit a felhasználó lát.
+- **Backend**: A háttérrendszer, amely a weboldal működését biztosítja.
+- **Reszponzív webdesign**: Olyan weboldal kialakítás, amely automatikusan alkalmazkodik a különböző képernyőméretekhez.
+- **Felhasználói élmény**: A felhasználó által a termékkel vagy szolgáltatással kapcsolatos érzések és tapasztalatok összessége.
+- **Kategória**: A termékek csoportosítására szolgáló egység.
+- **Kosár**: A felhasználó által kiválasztott termékek ideiglenes tárolóhelye a vásárlás előtt.
+- **Fizetési mód**: A vásárlás során választható fizetési lehetőségek (pl. bankkártya, utánvét).
+- **Rendelés**: A vásárló által leadott termékigény.
+- **Adminisztrátor**: A webáruházat kezelő személy.
+- **Felhasználó**: Az online bolt szolgáltatásait igénybe vevő személy.
+- **Termék**: Az eladásra kínált áru.
