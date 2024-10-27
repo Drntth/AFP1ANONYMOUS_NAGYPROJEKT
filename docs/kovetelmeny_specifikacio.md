@@ -2,6 +2,19 @@
 
 ## 1. Áttekintés
 
+A projekt célja, hogy egy felhasználóbarát, egyszerű navigációval rendelkező online elektronikai cikkeket árusító webáruházat hozzunk létre, amely széles választékot kínál a felhasználóknak, beleértve a számítógépalkatrészeket és egyéb elektronikai termékeket.
+
+Az oldal célja, hogy lehetővé tegye a felhasználók számára a termékek könnyű keresését és vásárlását, biztosítva a gyors és biztonságos tranzakciókat.
+
+**A webáruház főbb jellemzői:**
+
+- Reszponzív dizájn, amely optimalizált megjelenítést biztosít asztali gépeken és mobil eszközökön egyaránt.
+- Könnyen használható kategóriarendszer a termékek gyors böngészéséhez és szűréséhez (pl. processzorok, memóriák, videokártyák).
+- Részletes termékoldalak, amelyek tartalmazzák az árakat, leírásokat és specifikációkat.
+- Kosárkezelés, amely lehetővé teszi a felhasználók számára a termékek hozzáadását a kosárhoz, valamint a kosár tartalmának kezelését.
+- Online fizetési lehetőségek, beleértve a kártyás fizetést, hogy a vásárlás gyors és biztonságos legyen.
+- Felhasználói fiók létrehozása, amely lehetővé teszi a vásárlási előzmények nyomon követését és a kedvenc termékek mentését.
+
 ## 2. A jelenlegi helyzet leírása
 
 Az elektronikai cikkeket árusító webáruház fejlesztése jelenleg kezdeti szakaszban van. A projekt célja egy modern, reszponzív platform létrehozása, amely egyszerűsíti és hatékonyabbá teszi a felhasználók számára az elektronikai termékek online vásárlását. A technológiai háttér kialakítása megkezdődött, amely a következő technológiákra és keretrendszerekre épül:
