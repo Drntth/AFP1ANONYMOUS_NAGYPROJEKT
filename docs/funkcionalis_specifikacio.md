@@ -87,7 +87,16 @@ Az ügyfélszolgálati modul új funkciókat tartalmaz, amelyek egyszerűsítik 
 
 - **Megtekintő:** Az oldalt szabadon látogathatja, elolvashatja a termékekről írt véleményeket, azonban regisztráció nélkül nem tudja értékelni azokat, illetve nem tud személyes adatokat elmenteni későbbi vásárlásokhoz, nem tudja megtekinteni a vásárlási előzményeit.
 
-## 7. Megfeleltetés, hogyan fedik le a használati eseteket a követelményeket
+## 7. Megfeleltetés, hogyan fedik le a használati esetek a követelményeket
+
+- #1: A weboldal minden látogatója hozzáférhet a főoldalhoz, ahol böngészheti a kiemelt termékeket és akciókat.
+- #2: A felhasználók a navigációs sáv segítségével könnyen böngészhetik a különböző kategóriákat, hogy megtalálják a számukra releváns termékeket.
+- #3: A felhasználók rákattinthatnak egy termékre, hogy megtekinthessék annak részletes leírását és specifikációit.
+- #4: A felhasználók termékeket adhatnak a kosarukhoz, módosíthatják a mennyiségeket, vagy eltávolíthatják azokat a kosárból.
+- #5: A felhasználók kiválaszthatják a fizetési módot, és biztonságosan lebonyolíthatják a tranzakciót.
+- #6: A felhasználók regisztrálhatnak új fiókot, illetve bejelentkezhetnek a meglévő fiókjukba.
+- #7: Az adminisztrátorok képesek új termékeket hozzáadni a webáruházhoz, valamint meglévő termékek adatait módosítani vagy törölni.
+- #8: Az adminisztrátorok ellenőrizhetik a beérkezett megrendeléseket, frissíthetik azok státuszát, és kezelhetik a vásárlói igényeket.
 
 ## 8. Képernyőtervek
 | Kép | Leírás |
