@@ -1,17 +1,29 @@
 # Rendszerterv
 ## 1. A rendszer célja
+A rendszer célja, hogy egy felhasználóbarát, megbízható és könnyen navigálható webáruházat biztosítson az elektronikai eszközök értékesítéséhez. A weboldal lehetőséget nyújt a vásárlóknak a termékek részletes keresésére, összehasonlítására, valamint egyszerű és biztonságos rendelés leadására. Emellett a rendszer támogatja az adminisztrátorokat a készletkezelésben és a rendelési folyamat nyomon követésében.
+
+Nem cél a rendszernek egyedi szervizelési szolgáltatások biztosítása vagy a termékek egyéb technikai támogatása; a rendszer kizárólag a termékek online megjelenítését, értékesítését és szállítási folyamatainak támogatását célozza.
 
 ## 2. Projektterv
 
-### 2.1 Projektszerepkörök, felelőségek:
-   * Scrum masters:
-   * Product owner: 
-   * Üzleti szereplő:
-     
-### 2.2 Projektmunkások és felelőségek:
-   * Frontend:
-   * Backend:
-   * Tesztelés:
+### 2.1 Projektszerepkörök, felelősségek:
+Scrum Masters: Feladata a projekt gördülékeny vezetése, a fejlesztési ütemek betartatása és a csapat közötti kommunikáció támogatása.
+Product Owner: A termékfejlesztés irányítása a felhasználói igények és a funkcionális követelmények figyelembevételével. Közvetítő a fejlesztőcsapat és a megrendelők között.
+Üzleti szereplő: Az elektronikai áruházat üzemeltető vállalkozás képviselője, aki meghatározza a funkcionális és üzleti igényeket, illetve biztosítja a releváns adatokat és erőforrásokat.
+
+### 2.2 Projektmunkások és felelősségek:
+Frontend:
+
+Feladata: A webáruház felhasználói felületének kialakítása (HTML, CSS, JavaScript), a reszponzív dizájn biztosítása, valamint a vásárlói élmény optimalizálása.
+Felelős: Frontend fejlesztő csapat, UX/UI dizájnerek
+Backend:
+
+Feladata: A szerveroldali folyamatok fejlesztése és karbantartása, mint a felhasználói fiókok kezelése, adatbázis integráció, és a rendelési folyamat háttérben történő menedzselése.
+Felelős: Backend fejlesztő csapat
+Tesztelés:
+
+Feladata: A webáruház funkcióinak tesztelése, hibák azonosítása és javítása, valamint a felhasználói élmény biztosítása különböző eszközökön.
+Felelős: Tesztelési csapat
      
 ### 2.3 Ütemterv:
 
@@ -27,8 +39,22 @@
 ## 3. Üzleti folyamatok modellje
 
 ### 3.1 Üzleti szereplők
+Felhasználók (vásárlók): Az oldal látogatói, akik böngészhetik a termékeket, kosárba helyezhetik azokat, és rendelést adhatnak le.
+Adminisztrátor: Felelős a termékinformációk feltöltéséért, frissítéséért és készletkezeléséért, valamint a felhasználói visszajelzések és rendelési folyamatok követéséért.
+Beszállítók: Az elektronikai eszközök ellátásáért felelős szereplők, akik biztosítják az elérhető termékeket és azok utánpótlását a raktárban.
 
 ### 3.2 Üzleti folyamatok
+Termékfeltöltés és -kezelés: Az adminisztrátor rendszeresen frissíti a termékkínálatot és ellenőrzi a készletadatokat. Új termékek felvételekor a termékleírás, ár és elérhetőség kerül rögzítésre.
+
+Termékböngészés és keresés: A vásárlók böngészhetik és szűrhetik a termékeket kategóriák, árak és egyéb szempontok szerint, így gyorsan megtalálják az igényeiknek megfelelő eszközöket.
+
+Kosárkezelés és fizetés: A vásárlók kiválasztják a termékeket, és a kosár segítségével könnyedén kezelhetik azokat. A rendelés véglegesítésekor különböző fizetési módok állnak rendelkezésre.
+
+Rendelésfeldolgozás és szállítás: A rendelés leadása után az adminisztrátor és a futárszolgálat értesítést kap, és a szállítási folyamat megkezdődik. A vásárlók a rendelés státuszáról értesítést kapnak.
+
+Visszaküldés és ügyfélszolgálat: A vásárlók kérhetnek visszatérítést vagy termékcserét. Az adminisztrátor felügyeli a folyamatot, és biztosítja az ügyfélszolgálati támogatást az esetleges problémák megoldására.
+
+
 
 ## 4. Követelmények
 
