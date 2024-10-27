@@ -139,12 +139,39 @@ Böngészők:
 
 ### Vásárolt softwarekomponensek és külső rendszerek
 
+- Mi kizárólag saját fejlesztésű komponensekkel dolgozunk, nem használunk megvásárolt elemeket. 
+Így biztosak lehetünk benne, hogy minden megoldásunk egyedi és teljesen a mi elképzeléseink szerint működik. 
+Ez lehetővé teszi, hogy rugalmasabbak legyünk és jobban tudjunk alkalmazkodni az igényekhez.
+
 ### Hardver topológia
+
+- **Szerver**: A webáruház "szíve", amelyen az összes alkalmazás fut. A processzor sebessége, a memória kapacitása és a tárhely mérete határozza
+ meg a szerver teljesítményét. A választáskor figyelembe kell venni a várható forgalmat és az alkalmazás igényeit.
+- **Operációs rendszer**: A szerver szoftveres alapja. A Linux disztribúciók (Ubuntu, Debian, CentOS) népszerűek a stabilitásuk és a nyílt
+ forráskódú ökoszisztémájuk miatt.
+- **Webszerver**: Az a szoftver, amely a kéréseket fogadja és a megfelelő tartalmat küldi vissza a kliensnek. Az Apache és az Nginx a
+ legelterjedtebb webszerverek.
+- **Adatbázis**: A termékek, felhasználók és egyéb adatok tárolására szolgál. A MySQL a leggyakrabban használt adatbázis, de a PostgreSQL és a
+ NoSQL adatbázisok (MongoDB, Cassandra) is népszerűek.
+- **Laravel Framework**: A PHP nyelvű webfejlesztő keretrendszer, amely jelentősen egyszerűsíti a webáruház fejlesztését. A Composer csomagkezelő
+ segítségével könnyen kezelhetők a Laravel és egyéb függőségek.
 
 ### Fizikai alrendszerek
 
+- **Backend alrendszer**: PHP alapú rendszer, amely a webszerveren fut és kezeli az üzleti logikát, adatbázis-műveleteket és a felhasználói
+ kéréseket.
+- **Frontend alrendszer**: A HTML, CSS és JavaScript technológiákkal készült felhasználói felület, amely a böngészőkben jelenik meg, és interaktív
+ elemeket biztosít a felhasználók számára.
+- **Adatbázis alrendszer**: A MySQL vagy PL/SQL adatbázis felelős az adatok tárolásáért, lekérdezéséért, frissítéséért és kezeléséért
+
 ### Fejlesztő eszközök
 
+- Visual Studio Code
+- XAMPP
+- phpMyAdmin
+- Oracle SQL Developer
+- Git
+- KanBan
 
 ## 8. Architekturális terv
 
