@@ -7,6 +7,42 @@
 ## 3. Vágyálomrendszer
 
 ## 4. Jelenlegi üzleti folyamatok modellje
+3.1 Üzleti szereplők
+Vásárló: Az oldal látogatói, akik elektronikai eszközöket keresnek, vásárlást kezdeményeznek, termékeket böngésznek, és időnként támogatási vagy információs kérésekkel élnek.
+Adminisztrátor: Az oldal karbantartásáért felelős személy, aki termékeket tölt fel, kezeli a készletinformációkat, promóciókat állít be, valamint ellenőrzi a rendeléseket és kezeli az ügyfélszolgálati megkereséseket.
+Beszállító: Az elektronikai eszközök szállításáért és készlet utánpótlásáért felelős külső fél, amely biztosítja a szükséges termékeket az oldal számára.
+Futárszolgálat: A rendelések kiszállításáért felelős partner, amely a vásárlókhoz eljuttatja a megrendelt termékeket.
+3.2 Üzleti folyamatok
+Termékfeltöltés és készletkezelés
+
+Bemenet: Beszállítók által biztosított terméklista, árinformációk, készletmennyiség.
+Erőforrás: Adminisztrátor és a weboldal adminisztrációs rendszere.
+Lefutás: Az adminisztrátor frissíti a termékeket, mennyiségi adatokat és beárazza az új termékeket a weboldalon, illetve akciókat állít be.
+Kimenet: Naprakész termékadatok a weboldalon a vásárlók számára.
+Termékböngészés és információszerzés
+
+Bemenet: A vásárlók keresései, böngészési előzményei és érdeklődési körei.
+Erőforrás: Weboldal keresőrendszere, kategóriák és szűrési lehetőségek.
+Lefutás: A vásárlók az oldalon különböző termékeket kereshetnek, böngészhetnek kategóriák szerint, illetve szűrhetnek ár, márka és jellemzők alapján.
+Kimenet: A vásárlók megtalálják a keresett terméket és részletes termékinformációkat, amelyek segítik a döntésüket.
+Rendelés kezdeményezése és fizetés
+
+Bemenet: Vásárlók által kiválasztott termékek és azok mennyisége.
+Erőforrás: Online fizetési rendszer, amely biztonságos tranzakciót biztosít; kosár és rendelési folyamat.
+Lefutás: A vásárlók a kosárba helyezik a kívánt termékeket, majd kiválasztják a fizetési módot, és leadják a rendelést.
+Kimenet: Rendelési visszaigazolás és a vásárlók tájékoztatása a várható szállítási időről.
+Szállítás és ügyféltájékoztatás
+
+Bemenet: A leadott rendelések, vásárlók elérhetőségei és szállítási címei.
+Erőforrás: Futárszolgálat, amely a kiszállítást végzi.
+Lefutás: A rendelés kiszállításra kerül, a vásárló pedig nyomon követheti a szállítást az online felületen. A kiszállítást követően értesítést kap a rendelés kézbesítéséről.
+Kimenet: A vásárlók kézhez kapják a megrendelt terméket, és az oldal visszajelzést kérhet tőlük a vásárlási élményről.
+Ügyfélszolgálat és visszáru kezelés
+
+Bemenet: Vásárlói kérdések, problémák és visszaküldési kérelmek.
+Erőforrás: Az ügyfélszolgálat munkatársai, adminisztrátor, és a visszaküldési szabályzat.
+Lefutás: Az ügyfélszolgálat kezeli a vásárlói megkereséseket, válaszol a kérdésekre, és ha szükséges, elindítja a visszáru folyamatot.
+Kimenet: A vásárlók megfelelő segítséget kapnak, és az elégedettség növekszik a gördülékeny ügyféltámogatás révén.
 
 ## 5. Igényelt üzleti folyamatok modellje
 
