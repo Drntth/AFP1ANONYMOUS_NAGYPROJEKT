@@ -1,6 +1,20 @@
 # Funkcionális specifikáció
 ## 1. Jelenlegi helyzet leírása
 
+Az elektronikai cikkeket árusító webáruház fejlesztése jelenleg kezdeti szakaszban van. A projekt célja egy modern, reszponzív platform létrehozása, amely egyszerűsíti és hatékonyabbá teszi a felhasználók számára az elektronikai termékek online vásárlását. A technológiai háttér kialakítása megkezdődött, amely a következő technológiákra és keretrendszerekre épül:
+
+- **Laravel:** A webáruház fejlesztése Laravel keretrendszerrel valósul meg, amely gyors fejlesztést és jól strukturált kódot biztosít. A Laravel használatával egyszerűen létrehozhatók a backend folyamatok, például a felhasználók regisztrációja és kezelése, a termékkatalógus kezelése, valamint a rendelésfolyamat.
+
+- **Laravel Breeze:** Az oldal felhasználói fiókok kezelését a Laravel Breeze autentikációs rendszerével valósítjuk meg, amely könnyen beépíthető regisztrációs és bejelentkezési funkciókat biztosít. A Breeze segítségével egyszerűen kezelhetők a felhasználók fiókadatai és bejelentkezési folyamatai, beleértve a jelszó visszaállítást is, így kényelmes, biztonságos fiókkezelést kínálunk.
+
+- **Blade (Laravel View Engine):** Az oldal megjelenítéséhez a Laravel Blade sablonmotorját használjuk. A Blade lehetőséget biztosít dinamikus HTML sablonok létrehozására, amelyek gyorsítják az oldal fejlesztését és fenntartását, és segítik az új elemek integrációját, mint például a termékek listázása, részletes oldalak megjelenítése és kosárfunkciók.
+
+- **MySQL:** A webáruház adatkezelése egy MySQL alapú adatbázisban történik. Az adatbázis tárolja a felhasználói fiókok, a termékek és azok tulajdonságai, valamint a rendelések adatait. A Laravel Eloquent ORM (Object-Relational Mapping) megkönnyíti az adatbáziskezelést és a dinamikus lekérdezések végrehajtását.
+
+Az oldal fejlesztése több fázisban valósul meg: először a frontend és az alapvető termékstruktúra kialakítása, majd ezt követi a Laravel alapú backend és a dinamikus adatkezelés integrálása. Végül a fizetési és szállítási modulok integrációja következik.
+
+Jelenleg a fejlesztés tervezési fázisban van, amelyben a technológiai követelmények és funkcionális specifikációk meghatározása folyik. A cél egy könnyen használható, gyors, modern webáruház létrehozása, amely skálázható, reszponzív, és képes megfelelni a modern e-kereskedelmi elvárásoknak.
+
 ## 2. Vágyálomrendszer leírása
 
 ## 3. Jelenlegi üzleti folyamatok modellje
