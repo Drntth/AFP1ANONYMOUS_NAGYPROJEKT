@@ -71,7 +71,12 @@ Az ügyfélszolgálati modul új funkciókat tartalmaz, amelyek egyszerűsítik 
 
 ## 8. Képernyőtervek
 
-![képnév](gitlink ahol a kép van)
+![Bejelentkezés][(https://github.com/Drntth/AFP1ANONYMOUS_NAGYPROJEKT/blob/main/kepek/BEJELENTKEZES.jpg)]
+![Regisztráció] [(https://github.com/Drntth/AFP1ANONYMOUS_NAGYPROJEKT/blob/main/kepek/REGISZTRACIO.jpg)]
+![Főoldal] [(https://github.com/Drntth/AFP1ANONYMOUS_NAGYPROJEKT/blob/main/kepek/ELSO.jpg)]
+![TermekOldal] [(https://github.com/Drntth/AFP1ANONYMOUS_NAGYPROJEKT/blob/main/kepek/TERMEK.jpg)]
+
+
 
 ## 9. Forgatókönyvek
 
