@@ -132,3 +132,16 @@ Az ügyfélszolgálat modern, gyors válaszlehetőségekkel segíti a vásárló
 
 
 ## 7. Fogalomtár
+
+- **Webáruház**: Egy olyan online platform, ahol termékek és szolgáltatások vásárolhatók.
+- **Felhasználó**: Azok a személyek, akik az oldalra látogatnak és vásárolnak.
+- **Termék**: Az áruházban értékesített árucikk.
+- **Kategória**: A termékek csoportosítására szolgáló rendszer.
+- **Kosár**: A vásárló által kiválasztott termékek ideiglenes tárolóhelye a vásárlás befejezéséig.
+- **Rendelés**: A vásárló által a kosárban lévő termékek megvásárlására vonatkozó kérés.
+- **Fizetés**: A vásárlásért járó összeg kifizetése.
+- **Felhasználói fiók**: Egy személyes tér, ahol a felhasználó tárolhatja adatait, vásárlási előzményeit.
+- **Adminisztrátor**: Az, aki az oldal tartalmát kezeli, a termékeket felviszi, a rendelések státuszát módosítja.
+- **Reszponzív dizájn**: Az oldalnak a különböző képernyőméretekhez (asztali számítógép, tablet, mobiltelefon) való automatikus igazodása.
+- **Termékoldal**: Egy adott termék részletes leírását tartalmazó oldal.
+- **Kosárfunkció**: A vásárló által kiválasztott termékek összegyűjtésére szolgáló funkció.
