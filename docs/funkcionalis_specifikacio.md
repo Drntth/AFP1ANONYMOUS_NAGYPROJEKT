@@ -4,8 +4,53 @@
 ## 2. Vágyálomrendszer leírása
 
 ## 3. Jelenlegi üzleti folyamatok modellje
+1. Üzleti szereplők
+Felhasználó: Az oldal látogatója, aki keres, böngészik, és megtekinti az elérhető termékeket, illetve megrendelést adhat le.
+Rendszergazda/Adminisztrátor: A termékkínálat kezelését, a készletek nyomon követését és a promóciók beállítását végzi, illetve hozzáfér az ügyféladatokhoz és a rendelési információkhoz.
+Beszállító: Ellátja a webáruházat az elektronikai eszközökkel, figyeli a készleteket, és biztosítja a szükséges árufeltöltést.
+
+2. Üzleti folyamatok
+Termékfeltöltés és -kezelés
+
+Az adminisztrátor új termékeket tölt fel az adatbázisba, frissíti a meglévő termékek adatait és árát, illetve figyeli a készleteket, hogy elérhetőek legyenek a termékek.
+Termékböngészés és kosárba helyezés
+
+A felhasználók böngészik a különböző kategóriákat, és hozzáadhatják a kívánt termékeket a kosarukhoz.
+Rendelés és fizetési folyamat
+
+A felhasználó végigmegy a rendelési folyamaton, kiválasztja a fizetési módot, majd véglegesíti a rendelését. Az adminisztrátor figyeli az új rendelések státuszát.
+Szállítás és rendeléskövetés
+
+A rendelés leadása után a rendszer automatikusan értesíti a beszállítót, illetve a szállító céget a csomag kiküldéséről.
+Visszaküldés és ügyfélszolgálat
+
+A felhasználók a vásárlás után panaszt nyújthatnak be, illetve visszaküldési kérelmet indíthatnak, amelyet az adminisztrátor kezel.
+
 
 ## 4. Igényelt üzleti folyamatok modellje
+1. Üzleti szereplők
+Felhasználó: Az oldal látogatói, akik különböző kategóriákban böngészhetnek termékek között, és személyre szabott ajánlásokat kapnak.
+Adminisztrátor: Az adminisztrátor számára továbbfejlesztett admin felület áll rendelkezésre a termékek, készletek és felhasználói visszajelzések kezelésére.
+Beszállító: Valós idejű hozzáféréssel rendelkezik a termékkészletekhez, és közvetlen értesítést kap a készletek utánpótlásáról.
+Futárszolgálat: Értesíti a vásárlókat a szállítás állapotáról, amely megjelenik a felhasználói fiókokban is.
+
+2. Üzleti folyamatok
+Automatizált termékfeltöltés és készletkezelés
+
+Az adminisztrátor hozzáférhet egy automatizált készletfigyelő rendszerhez, amely automatikus értesítéseket küld alacsony készlet esetén, és közvetlen kapcsolatot biztosít a beszállítók felé.
+Intelligens termékkeresés és személyre szabott ajánlások
+
+A felhasználók fejlett szűrési lehetőségekkel böngészhetnek, és a rendszer korábbi keresési és vásárlási adatok alapján releváns ajánlatokat jelenít meg.
+Egyszerűsített fizetési folyamat és kosárkezelés
+
+A fizetési folyamat gyors és biztonságos, a felhasználók könnyedén kezelhetik a kosaruk tartalmát, és többféle fizetési mód közül választhatnak.
+Rendeléskövetés és valós idejű szállítási értesítések
+
+A rendszer nyomon követi a rendeléseket, és automatikus értesítéseket küld a vásárlóknak, beleértve a szállítási frissítéseket is. A vásárlók valós idejű információt kapnak a csomag állapotáról.
+Bővített ügyfélszolgálat és egyszerűsített visszaküldés
+
+Az ügyfélszolgálati modul új funkciókat tartalmaz, amelyek egyszerűsítik a visszaküldési és reklamációs folyamatokat, így gyorsabban és hatékonyabban kezelhetők a felhasználói kérések.
+
 
 ## 5. Követelménylista
 
