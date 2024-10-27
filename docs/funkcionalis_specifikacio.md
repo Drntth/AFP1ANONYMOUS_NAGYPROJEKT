@@ -132,6 +132,35 @@ Az ügyfélszolgálati modul új funkciókat tartalmaz, amelyek egyszerűsítik 
 
 ## 9. Forgatókönyvek
 
+- **Felhasználói regisztráció és bejelentkezés:**
+    -  Felhasználó ellátogat a weboldalra, ráklikkel a "Regisztráció" gombra. Kitölti a szükséges mezőket (név, e-mail, jelszó), elfogadja a
+     felhasználási feltételeket, majd ráklikkel a "Regisztráció" gombra. A rendszer ellenőrzi az adatokat, létrehozza az új felhasználói fiókot.
+     A felhasználó bejelentkezik az új fiókjával.
+
+- **Böngészés és termékkeresés:**
+    - A felhasználó a főoldalon vagy a kategóriák menüben böngészi a termékeket. A felhasználó szűrőket használhat a termékek szűkítésére 
+     (ár, márka, tulajdonságok). A termékek részletes leírását és képeit megtekintheti.
+
+- **Kosárba helyezés és vásárlás:**
+    - A felhasználó kiválaszt egy terméket, megadja a kívánt mennyiséget, majd a "Kosárba" gombra kattint. A kosár tartalmát bármikor
+     megtekintheti és módosíthatja. A vásárlás folytatásakor kiválasztja a szállítási és fizetési módot, majd leadja a rendelést. 
+     A felhasználó vendégként is vásárolhat, de a regisztrált felhasználóknak több előnyük van (pl. kedvezmények, rendelési előzmények).
+
+- **Fizetés:**
+    - A felhasználó kiválaszt egy fizetési módot (bankkártya, utánvét, online átutalás).
+
+- **Szállítás:**
+    - A rendszer kiszámítja a szállítási költséget és a várható szállítási időt. A felhasználó kiválasztja a kívánt szállítási címet és módot.
+
+- **Vevőszolgálat:**
+    - A felhasználó felveszi a kapcsolatot a vevőszolgálattal e-mailben. A vevőszolgálat munkatársa válaszol a kérdésekre és megoldja a
+     problémákat. A rendszerben van egy gyakori kérdések (FAQ) rész.
+
+- **Profil kezelése:**
+    - A felhasználók egy személyre szabott felhasználói fiókkal rendelkeznek, ahol központi helyen tárolhatják és kezelhetik személyes adataikat,
+     beleértve a nevüket, e-mail címüket és szállítási címüket. Ezen felül gyorsabban vásárolhatnak, mivel nem kell minden alkalommal újra megadni
+      adataikat.
+
 ## 10. Funkció - követelmény megfeleltetése
 
 | Id | Követelmény | Funkció |
