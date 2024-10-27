@@ -70,11 +70,12 @@ Az ügyfélszolgálati modul új funkciókat tartalmaz, amelyek egyszerűsítik 
 ## 7. Megfeleltetés, hogyan fedik le a használati eseteket a követelményeket
 
 ## 8. Képernyőtervek
-
-![Bejelentkezés][(https://github.com/Drntth/AFP1ANONYMOUS_NAGYPROJEKT/blob/main/kepek/BEJELENTKEZES.jpg)]
-![Regisztráció] [(https://github.com/Drntth/AFP1ANONYMOUS_NAGYPROJEKT/blob/main/kepek/REGISZTRACIO.jpg)]
-![Főoldal] [(https://github.com/Drntth/AFP1ANONYMOUS_NAGYPROJEKT/blob/main/kepek/ELSO.jpg)]
-![TermekOldal] [(https://github.com/Drntth/AFP1ANONYMOUS_NAGYPROJEKT/blob/main/kepek/TERMEK.jpg)]
+| Kép | Leírás |
+| :-----------: | :-----------: |
+| ![Bejelentkezés](https://github.com/Drntth/AFP1ANONYMOUS_NAGYPROJEKT/blob/main/kepek/BEJELENTKEZES.jpg) |  A bejelentkező oldal tervezete. |
+| ![Regisztráció] (https://github.com/Drntth/AFP1ANONYMOUS_NAGYPROJEKT/blob/main/kepek/REGISZTRACIO.jpg) |  A regisztrációs oldal tervezete. |
+| ![Főoldal] (https://github.com/Drntth/AFP1ANONYMOUS_NAGYPROJEKT/blob/main/kepek/ELSO.jpg) |  A főoldal tervezete. |
+| ![TermekOldal] (https://github.com/Drntth/AFP1ANONYMOUS_NAGYPROJEKT/blob/main/kepek/TERMEK.jpg) |  A termékoldal  tervezete. |
 
 
 
