@@ -214,6 +214,8 @@ Ez lehetővé teszi, hogy rugalmasabbak legyünk és jobban tudjunk alkalmazkodn
 
 ## 9. Adatbázis terv
 
+![ADATBÁZISTERV](https://github.com/Drntth/AFP1ANONYMOUS_NAGYPROJEKT/blob/main/kepek/adatbazis_terv.png)
+
 ## 10. Implementációs terv
 
 ## 11. Tesztterv
