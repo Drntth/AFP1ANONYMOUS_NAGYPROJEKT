@@ -177,9 +177,40 @@ Ez lehetővé teszi, hogy rugalmasabbak legyünk és jobban tudjunk alkalmazkodn
 
 ### Webszerver
 
+- Technológia:
+   - Apache: A legtöbb Laravel projekt ezeket a webszervereket használja.
+   - PHP: A Laravel PHP-ben íródott, így a webszervernek támogatnia kell ezt a nyelvet.
+- Konfiguráció:
+   - Virtual host: Minden Laravel projektnek saját virtuális hostot kell kapnia.
+   - .htaccess konfiguráció: A kérések átirányítása a public könyvtárba, URL rewriting, egyéb szükséges beállítások.
+
 ### Adatbázis rendszer
 
+- Technológia:
+   - MySQL: Ez az egyik leggyakrabban használt adatbázis Laravel projektekben.
+- Táblák:
+   - products: id, name, description, price, category_id, image, stock
+   - users: id, name, email, password, role
+   - orders: id, user_id, total_price, shipping_address, payment_method
+   - order_items: id, order_id, product_id, quantity, price
+   - categories: id, name
+- Kapcsolatok:
+   - Egy-több: Egy kategóriához több termék tartozhat.
+   - Egy-egy: Egy termék csak egy kategóriához tartozhat.
+   - Migrációk és seederek: Az adatbázis szerkezetének és adatainak kezelésére.
+
 ### A program elérése, kezelése
+
+- Frontend:
+   - Blade templating engine: A Laravel alapértelmezett sablonmotorja.
+   - CSS framework: A felhasználói felület kialakításához.
+   - JavaScript framework: Dinamikus elemekhez, például a kosárhoz.
+- Backend:
+   - Routes: Az URL-ek és a hozzájuk tartozó kontroller metódusok közötti kapcsolatot definiálják.
+   - Controllers: A HTTP kérések kezelése, az üzleti logika megvalósítása.
+   - Models: Az adatbázis táblákkal való interakció.
+   - Migrations: Az adatbázis szerkezetének módosítására.
+   - Seeders: Az adatbázis feltöltésére tesztadatokkal.
 
 ## 9. Adatbázis terv
 
