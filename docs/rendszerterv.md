@@ -274,9 +274,30 @@ Ez lehetővé teszi, hogy rugalmasabbak legyünk és jobban tudjunk alkalmazkodn
 
 ## 12. Telepítési terv
 
-Fizikai telepítési terv: 
+**Fizikai telepítési terv:** A webáruház működéséhez először szükség van egy adatbázis-szerverre és egy webszerverre, amelyek együttműködnek a felhasználói igények kiszolgálása érdekében.
 
-Szoftver telepítési terv: 
+- **Szoftver telepítési terv:**
+   - A felhasználók számára nem szükséges külön szoftver telepítése; a webáruház teljes mértékben böngészőn keresztül érhető el (pl. Microsoft Edge, Google Chrome, Mozilla Firefox, Safari).
+   - A webáruház reszponzív kialakítása lehetővé teszi, hogy asztali és mobil platformokon egyaránt használható legyen, egyszerű és biztonságos hozzáférést biztosítva minden eszközről.
+
+- **Adatbázis-szerver:**
+   - Az adatbázis-szerver tárolja a termékek, felhasználók, rendelések és kategóriák adatait.
+   - Laravel használatával a webalkalmazás közvetlen kapcsolatot létesít az adatbázis-szerverrel, amely lehetővé teszi a gyors adatkezelést és biztonságos tranzakciókezelést.
+   - **Adatbázis:** MySQL (alapértelmezett), de szükség esetén támogatott más SQL alapú rendszerek is, például PostgreSQL.
+
+- **Webszerver:**
+   - A webszerver biztosítja a Laravel-alapú alkalmazás futtatását és a felhasználói interakciók kiszolgálását.
+   - A webszerver futtatja a Laravel alkalmazást, amely fogadja a HTTP-kéréseket a kliensektől, és feldolgozza azokat, beleértve a termékkeresést, kosárkezelést és felhasználói profilműveleteket.
+   - A szerver emellett felelős a beépített Laravel Blade sablonmotor által létrehozott dinamikus HTML-oldalak megjelenítéséért.
+   - **SSL tanúsítvány telepítése** ajánlott a biztonságos fizetési folyamatok támogatásához, amelyek a Stripe alapú Laravel Cashier fizetési rendszeren keresztül valósulnak meg.
+
+- **Hálózati kapcsolat:**
+   - A webszerver közvetlen internetkapcsolattal rendelkezik, és publikus IP-címmel érhető el.
+   - A felhasználók böngészőiken keresztül kapcsolódnak a webszerverhez, és HTTP/HTTPS protokollon keresztül érhetik el a webáruházat.
+
+**Szoftver telepítési terv:**
+   - A felhasználók számára nem szükséges külön szoftver telepítése; a webáruház teljes mértékben böngészőn keresztül érhető el (pl. Microsoft Edge, Google Chrome, Mozilla Firefox, Safari).
+   - A webáruház reszponzív kialakítása lehetővé teszi, hogy asztali és mobil platformokon egyaránt használható legyen, egyszerű és biztonságos hozzáférést biztosítva minden eszközről.
 
 ## 13. Karbantartási terv
 
