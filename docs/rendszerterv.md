@@ -301,3 +301,25 @@ Ez lehetővé teszi, hogy rugalmasabbak legyünk és jobban tudjunk alkalmazkodn
 
 ## 13. Karbantartási terv
 
+A rendszer folyamatos és biztonságos működésének biztosítása érdekében a következő karbantartási tevékenységek kerülnek végrehajtásra:
+
+**Rendszerfrissítések kezelése**
+A rendszer frissítéseit két kategóriára bontjuk:
+
+- **Funkcionális frissítések:** Ezek tartalmazzák az új funkciók hozzáadását vagy a meglévő funkciók továbbfejlesztését. A frissítések célja a felhasználói élmény javítása, például az új termékek megjelenítése, akciók kezelése és a vásárlási folyamat optimalizálása.
+- **Biztonsági frissítések:** A rendszerben felmerülő biztonsági sebezhetőségek kijavítása. Ez kritikus fontosságú a felhasználói adatok, beleértve a vásárlók pénzügyi információit, védelme érdekében.
+
+**Adatbázis karbantartása**
+Az adatbázis hatékonyságának fenntartása érdekében rendszeres karbantartási műveletek szükségesek, amelyek magukban foglalják:
+
+- **Adatbázis optimalizálás:** A termékek, rendelések és felhasználói adatok hatékonyabb kezelése érdekében az adatbázis optimalizálása elengedhetetlen.
+- **Biztonsági mentések:** Az adatvesztés elkerülése érdekében a rendszer automatikusan napi biztonsági mentéseket készít, amelyeket távoli szervereken tárolnak.
+- **Adattisztítás:** Az inaktív vagy elavult termékadatokat időszakosan törölni vagy archiválni kell, hogy csökkentsük a rendszer terhelését.
+
+**Hibajavítás és technikai támogatás**
+A felhasználók által jelentett hibák és problémák gyors megoldásához egy dedikált támogatási csapat lesz kijelölve. A hibaelhárítás a következő lépéseket fogja követni:
+
+- **Problémák azonosítása:** A felhasználói visszajelzések és rendszerfigyelési eszközök segítségével.
+- **Prioritás meghatározása:** A hibák súlyosságuk alapján kapnak prioritást, és ennek megfelelően kerülnek javításra.
+- **Hibaelhárítás:** A fejlesztőcsapat kijavítja a hibát, és szükség esetén azonnal frissíti a rendszert.
+
