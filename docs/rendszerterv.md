@@ -218,6 +218,18 @@ Ez lehetővé teszi, hogy rugalmasabbak legyünk és jobban tudjunk alkalmazkodn
 
 ## 10. Implementációs terv
 
+**Felhasználó felület:**
+
+- A webáruház felhasználói felülete a Laravel Blade sablonmotor segítségével készül, amely lehetővé teszi a dinamikus és könnyen karbantartható oldalstruktúrák létrehozását. A HTML biztosítja az oldalak szerkezetét, míg a CSS gondoskodik a weboldal vizuális megjelenéséről és a reszponzivitásról, így az oldal különböző eszközökön is optimálisan jelenik meg. A felhasználói felület alapvető célja, hogy a vásárlók számára egyszerű és átlátható böngészési, keresési és vásárlási élményt nyújtson, minimalista és jól strukturált dizájnnal.
+
+- A bejelentkezés és regisztráció a Laravel Breeze csomag segítségével kerül kialakításra, amely előre beépített felhasználói hitelesítést biztosít. A regisztrált felhasználók elérhetik fiókjukat, ahol kezelhetik személyes adataikat és megrendeléseiket. A webáruház emellett egy különálló adminisztrációs felülettel is rendelkezik, amely kizárólag az adminisztrátorok számára érhető el. Itt az adminisztrátorok képesek új termékeket hozzáadni, módosítani, vagy törölni, valamint kezelni a megrendeléseket és ellenőrizni a felhasználói aktivitást.
+
+**Adatbázis:**
+
+- Az adatbázis MySQL rendszerben kerül kialakításra, amely tárolja a termékek, kategóriák, megrendelések, valamint a felhasználói profilok adatait. A termékek részletes információi, mint például a név, ár, leírás és készlet, mind az adatbázisban kerülnek tárolásra. Az egyes kategóriák lehetővé teszik a termékek egyszerű szűrését és böngészését, így segítik a felhasználókat a keresett termékek gyors megtalálásában.
+
+- A megrendelésekkel kapcsolatos adatok nyilvántartása, mint például a termékek, vásárlási dátumok, és a vásárlói információk, szintén az adatbázisban kap helyet. A fizetési tranzakciókat a Laravel Cashier csomag kezeli, amely Stripe integrációval biztosít biztonságos és gyors online fizetési megoldást. A rendszer az összes felhasználói adatot és tranzakciós információt biztonságosan tárolja, garantálva a személyes adatok védelmét és a megfelelő adatkezelést.
+
 ## 11. Tesztterv
 
 1. Egységtesztelés (*Unit testing*):
