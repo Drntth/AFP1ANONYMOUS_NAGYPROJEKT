@@ -10,12 +10,18 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
-        return view('products.index', ['products' => $products]); //itt lehet nem kell az s betű
+        return view('products.index', ['products' => $products]); //itt lehet nem kell az s betű // de kellett 
+        
     }
 
     public function add()
     {
         return view('products.add');
+    }
+    public function single($id)
+    {
+        $product = Product::findOrFail($id);
+        return view('products.single',['product' => $product]);
     }
 
     public function store(Request $request)
@@ -59,4 +65,5 @@ class ProductController extends Controller
         $product->delete();
         return redirect(route('product.index'))->with('success', 'Product Deleted Successfully!');
     }
+    
 }
