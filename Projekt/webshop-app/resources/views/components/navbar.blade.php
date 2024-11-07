@@ -2,7 +2,7 @@
     @if (Route::has('login'))
         <nav class="container mx-auto flex items-center justify-between">
             <div class="flex items-center space-x-6">
-                <a href="#" class="text-white text-lg font-semibold">Webshop</a>
+                <a href="/" class="text-white text-lg font-semibold">Webshop</a>
 
                 <a href="#" class="text-gray-300 hover:text-white">Home</a>
                 <a href="#" class="text-gray-300 hover:text-white">Products</a>

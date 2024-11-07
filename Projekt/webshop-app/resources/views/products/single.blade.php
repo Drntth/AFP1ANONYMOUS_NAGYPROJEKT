@@ -13,13 +13,9 @@
     </header>
     
     <main>
-    
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            @foreach ( $products as $product)
-            @if ($product->stock > 0)
-
-           
-            <div class="max-w-xs mx-auto bg-white rounded-lg shadow-lg overflow-hidden hover:border-2 hover:max-w-s">
+               
+       
+          <div class="mx-auto bg-white rounded-lg shadow-lg overflow-hidden hover:border-2 ">
                 <!-- Product Image -->
                 <img src="{{ $product->image }}" class="w-full h-56 object-cover" alt="{{ $product->name }}">
 
@@ -40,11 +36,7 @@
 
                 </div>
             </div>
-            @endif
-            @endforeach 
-
-
-            </div>
+     
     </main>
     <footer>
         <x-footer></x-footer>
