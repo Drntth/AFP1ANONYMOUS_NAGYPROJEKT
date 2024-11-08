@@ -29,7 +29,7 @@
                             </svg>
                         </button>
 
-                        <div class="absolute right-0 hidden bg-gray-950 backdrop-blur-lg bg-opacity-90 text-white border border-gray-600 rounded-md mt-2 w-48 shadow-md group-focus-within:block">
+                        <div class="absolute right-0 hidden bg-gray-950 backdrop-blur-lg bg-opacity-70 text-white border border-gray-600 rounded-md mt-2 w-auto shadow-md group-focus-within:block">
                             <a href="{{ route('dashboard') }}" class="block px-4 py-2 text-sm hover:bg-gray-700">Dashboard</a>
                             <a href="{{ route('profile.edit')}}" class="block px-4 py-2 text-sm hover:bg-gray-700">Settings</a>
                             <form method="POST" action="{{ route('logout') }}" class="inline">
