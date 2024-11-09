@@ -15,7 +15,7 @@
                     <a href="/" class="text-gray-300 hover:text-white">Products</a>
                     <a href="/" class="text-gray-300 hover:text-white">Contact</a>
                 @elseif ($isDashboard)
-                    <a href="/product" class="text-gray-300 hover:text-white">Product Manager</a>
+                    <a href="/dashboard/product" class="text-gray-300 hover:text-white">Product Manager</a>
                 @endif
             </div>
 
