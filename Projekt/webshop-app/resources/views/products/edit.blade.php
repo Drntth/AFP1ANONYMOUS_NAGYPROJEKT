@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit product</title>
+    @vite('resources/css/app.css')
 </head>
-<body>
+<body class="bg-custom-bg bg-cover">
     <h1>Edit a product</h1>
     <div>
     @if ($errors->any())
