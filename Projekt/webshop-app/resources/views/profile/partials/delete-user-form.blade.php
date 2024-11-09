@@ -43,7 +43,7 @@
             </div>
 
             <div class="mt-6 flex justify-between">
-                <x-secondary-button x-on:click="$dispatch('close')" class="bg-green-600 hover:bg-green-800 text-white focus:outline-none focus:ring-0 focus:ring-transparent ring-offset-transparent active:bg-green-800">
+                <x-secondary-button x-on:click="$dispatch('close')" class="text-center text-white px-3 py-1 rounded-md bg-slate-500 hover:bg-slate-600 focus:outline-none focus:ring-0 focus:ring-transparent ring-offset-transparent active:bg-slate-600">
                     {{ __('Cancel') }}
                 </x-secondary-button>
 
