@@ -15,7 +15,11 @@
                     <a href="/" class="text-gray-300 hover:text-white">Products</a>
                     <a href="/" class="text-gray-300 hover:text-white">Contact</a>
                 @elseif ($isDashboard)
-                    <a href="/dashboard/product" class="text-gray-300 hover:text-white">Product Manager</a>
+                    @auth
+                        @if (Auth::user()->role === 'admin')
+                            <a href="/dashboard/product" class="text-gray-300 hover:text-white">Product Manager</a>
+                        @endif
+                     @endauth
                 @endif
             </div>
 
