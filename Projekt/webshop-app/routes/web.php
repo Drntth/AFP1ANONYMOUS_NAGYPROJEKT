@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Middleware\CheckAdmin;
 use App\Models\Product;
+use App\Http\Controllers\CartController;
 
 
 Route::get('/', function () {
@@ -29,6 +30,7 @@ Route::middleware('auth')->group(function () {
 
 });
 
+<<<<<<< Updated upstream
 Route::middleware([CheckAdmin::class])->group(function () {
     Route::get('/dashboard/product', [ProductController::class, 'index'])->name('product.index');
     Route::get('/dashboard/product/add', [ProductController::class, 'add'])->name('product.add');
@@ -38,5 +40,19 @@ Route::middleware([CheckAdmin::class])->group(function () {
     Route::delete('/dashboard/product/{product}/destroy', [ProductController::class, 'destroy'])->name('product.destroy');
 
 });
+=======
+Route::get('/product', [ProductController::class, 'index'])->name('product.index');
+Route::get('/product/add', [ProductController::class, 'add'])->name('product.add');
+Route::post('/product', [ProductController::class, 'store'])->name('product.store');
+Route::get('/product/{id}', [ProductController::class, 'single'])->name('product.single');
+Route::get('/product/{product}/edit', [ProductController::class, 'edit'])->name('product.edit');
+Route::put('/product/{product}/update', [ProductController::class, 'update'])->name('product.update');
+Route::delete('/product/{product}/destroy', [ProductController::class, 'destroy'])->name('product.destroy');
+
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
+Route::post('/cart/remove', [CartController::class, 'remove'])->name('cart.remove');
+Route::post('/cart/update', [CartController::class, 'update'])->name('cart.update');
+>>>>>>> Stashed changes
 
 require __DIR__.'/auth.php';

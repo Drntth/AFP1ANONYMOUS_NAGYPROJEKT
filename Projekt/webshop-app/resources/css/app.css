@@ -1,3 +1,80 @@
+@import "@fortawesome/fontawesome-free/css/all.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+i
+{
+    color:black
+}
+
+  .rainbow {
+    font-size: 18px;
+    animation: colorRotate 8s linear 0s infinite;
+  }
+  
+  @keyframes colorRotate {
+    0% {
+      color: #6666ff;
+    }
+    5% {
+      color: #0099ff;
+    }
+    10% {
+      color: #00ffff;
+    }
+    15% {
+      color: #00ffcc;
+    }
+    20% {
+      color: #00ff99;
+    }
+    25% {
+      color: #00ff66;
+    }
+    30% {
+      color: #00ff33;
+    }
+    35% {
+      color: #00ff00;
+    }
+    40% {
+      color: #33ff00;
+    }
+    45% {
+      color: #66ff00;
+    }
+    50% {
+      color: #99ff00;
+    }
+    55% {
+      color: #ccff00;
+    }
+    60% {
+      color: #ffff00;
+    }
+    65% {
+      color: #ffcc00;
+    }
+    70% {
+      color: #ff9900;
+    }
+    75% {
+      color: #ff6600;
+    }
+    80% {
+      color: #ff3366;
+    }
+    85% {
+      color: #ff0099;
+    }
+    90% {
+      color: #ff00cc;
+    }
+    95% {
+      color: #ff00ff;
+    }
+    100% {
+      color: #6666ff;
+    }
+  }
+  
