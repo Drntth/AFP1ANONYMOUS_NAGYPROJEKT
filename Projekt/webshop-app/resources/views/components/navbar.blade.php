@@ -7,12 +7,17 @@
                     <a href="/" class="text-white text-2xl font-semibold">Webshop</a>
                 @elseif ($isDashboard)
                     <a href="/dashboard" class="text-white text-2xl font-semibold">Dashboard</a>
+                @elseif ($isProducts)
+                    <a href="/" class="text-white text-2xl font-semibold">Webshop</a>
                 @endif
 
                 <a href="/" class="text-gray-300 hover:text-white">Home</a>
 
                 @if ($isMainPage)
-                    <a href="/" class="text-gray-300 hover:text-white">Products</a>
+                    <a href="/products" class="text-gray-300 hover:text-white">Products</a>
+                    <a href="/" class="text-gray-300 hover:text-white">Contact</a>
+                @elseif ($isProducts)
+                    <a href="/products" class="text-gray-300 hover:text-white">Products</a>
                     <a href="/" class="text-gray-300 hover:text-white">Contact</a>
                 @elseif ($isDashboard)
                     @auth
