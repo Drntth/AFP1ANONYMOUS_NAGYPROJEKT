@@ -12,10 +12,6 @@ class UserController extends Controller
         return view('users.index', compact('users'));
     }
 
-    public function edit(User $user) {
-        return view('users.edit', compact('user'));
-    }
-
     public function destroy($id) {
         $user = User::findOrFail($id);
 
@@ -25,15 +21,14 @@ class UserController extends Controller
     }
 
     public function updateRole(Request $request, $id) {
-    // Validate the incoming request
-    $validated = $request->validate([
-        'role' => 'required|in:user,admin',
-    ]);
+        $validated = $request->validate([
+            'role' => 'required|in:user,admin',
+        ]);
 
-    $user = User::findOrFail($id);
-    $user->role = $validated['role'];
-    $user->save();
+        $user = User::findOrFail($id);
+        $user->role = $validated['role'];
+        $user->save();
 
-    return redirect()->route('users.index')->with('success', 'User role updated successfully!');
+        return redirect()->route('users.index')->with('success', 'User role updated successfully!');
     }
 }
