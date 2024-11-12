@@ -23,6 +23,7 @@
                     @auth
                         @if (Auth::user()->role === 'admin')
                             <a href="/dashboard/product" class="text-gray-300 hover:text-white">Product Manager</a>
+                            <a href="/dashboard/users" class="text-gray-300 hover:text-white">User Manager</a>
                         @endif
                      @endauth
                 @endif
