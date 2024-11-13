@@ -49,6 +49,7 @@
                     </form>
                 </div>
 
+
             </div>
             <a href="{{ route('cart.index') }}">
                 <i class="fa-solid fa-cart-shopping rainbow"></i>
