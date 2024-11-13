@@ -1,4 +1,8 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<!--
+    This is the old navigation bar that was default created, with a different style, but we have our own now in, but as a component <x-navbar/>.
+    For now it's being kept in case it's needed for later including the components.
+-->
+<nav x-data="{ open: false }" class="bg-custom-dark border-y-4 border-slate-500">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">

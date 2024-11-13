@@ -26,6 +26,11 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         return view('products.single',['product' => $product]);
     }
+    public function single($id)
+    {
+        $product = Product::findOrFail($id);
+        return view('products.single',['product' => $product]);
+    }
 
     public function store(Request $request)
     {

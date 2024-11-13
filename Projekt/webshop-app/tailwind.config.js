@@ -14,6 +14,12 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            backgroundImage: {
+                'custom-bg': "url('/img/background.jpg')",
+            },
+            colors: {
+                'custom-dark': '#2A2A38',
+            },
         },
     },
 
