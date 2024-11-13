@@ -33,15 +33,19 @@
         </div>
         <div class="pt-2">
             <label class="text-white" for="description">Description</label>
-            <textarea class="block mt-1 w-full rounded-md focus:border-slate-600 focus:ring-slate-600 border-2" type="text" name="description" id="description" placeholder="Description"></textarea>
+            <input class="block mt-1 w-full rounded-md focus:border-slate-600 focus:ring-slate-600 border-2" type="text" name="description" id="description" placeholder="Description">
         </div>
         <div class="pt-2">
             <label class="text-white" for="price">Price</label>
             <input class="block mt-1 w-full rounded-md focus:border-slate-600 focus:ring-slate-600 border-2" type="text" name="price" id="price" placeholder="Price">
         </div>
         <div class="pt-2">
-            <label class="text-white" for="category_id">Category ID</label>
-            <input class="block mt-1 w-full rounded-md focus:border-slate-600 focus:ring-slate-600 border-2" type="text" name="category_id" id="category_id" placeholder="Category ID">
+        <label class="text-white" for="category_id">Product Type</label>
+        <select class="block mt-1 w-full rounded-md focus:border-slate-600 focus:ring-slate-600 border-2" name="category_id" id="category_id" required>
+            @foreach($category_id as $id)
+                <option value="{{ $id->value }}">{{ $id->name }}</option>
+            @endforeach
+        </select>
         </div>
         <div class="pt-2">
             <label class="text-white" for="image">Image</label>

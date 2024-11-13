@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Enums\category_id_enum;
 
 return new class extends Migration
 {
@@ -16,7 +17,7 @@ return new class extends Migration
             $table->string("name");
             $table->text("description");
             $table->integer("price");
-            $table->integer("category_id");
+            $table->enum('category_id', ['CPU', 'GPU', 'RAM', 'Motherboard', 'PSU', 'Storage', 'Case', 'Cooling']);
             $table->integer("stock");
             $table->string("image");
             $table->timestamps();
