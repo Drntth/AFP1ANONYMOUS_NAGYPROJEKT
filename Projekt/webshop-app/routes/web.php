@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\CheckAdmin;
 use App\Models\Product;
+use App\Http\Controllers\CartController;
 
 
 Route::get('/', function () {
@@ -43,5 +44,10 @@ Route::middleware(['auth', CheckAdmin::class])->group(function () {
     Route::delete('/dashboard/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
     Route::put('/dashboard/users/{id}/role', [UserController::class, 'updateRole'])->name('users.updateRole');
 });
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
+Route::post('/cart/remove', [CartController::class, 'remove'])->name('cart.remove');
+Route::post('/cart/update', [CartController::class, 'update'])->name('cart.update');
+
 
 require __DIR__.'/auth.php';
