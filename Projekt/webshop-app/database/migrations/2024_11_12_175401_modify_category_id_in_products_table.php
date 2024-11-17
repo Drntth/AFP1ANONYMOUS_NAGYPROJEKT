@@ -21,8 +21,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('products', function (Blueprint $table) {
-            $table->integer('category_id')->change(); //visszaállítás eredeti típusra
-        });
+        Schema::dropIfExists('products');
     }
 };
