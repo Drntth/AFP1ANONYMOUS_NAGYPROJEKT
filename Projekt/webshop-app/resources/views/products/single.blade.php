@@ -22,14 +22,26 @@
                     </div>
                     <div class="flex justify-end flex-col lg:space-x-2 lg:space-y-0">
                         <div class="text-end">
-                            <p class="text-lg font-semibold text-slate-700 mt-2">Price: {{ $product->price }} ft</p>
-                            <p class="text-lg font-semibold text-slate-700">Stock: {{ $product->stock }}</p>
+                            <p class="text-lg font-semibold text-slate-700 mt-2">Price: {{ $product->price }} €</p>
+                            <p class="text-lg font-semibold text-slate-700">Stock: {{ $product->stock }} pcs</p>
                         </div>
                     </div>
                 </div>
                 <div class="flex justify-between flex-col space-y-2 sm:flex-row sm:space-x-2 sm:space-y-0 pt-5">
                     <a href="/products" class="text-center text-white px-3 py-1 rounded-md bg-slate-500 hover:bg-slate-600 focus:outline-none focus:ring-0 focus:ring-transparent ring-offset-transparent active:bg-slate-600">Back</a>
-                    <a href="" class="text-center text-white px-3 py-1 rounded-md bg-slate-500 hover:bg-slate-600 focus:outline-none focus:ring-0 focus:ring-transparent ring-offset-transparent active:bg-slate-600">Add to cart</a>
+                    @if ($product->stock > 0)
+                        <form action="{{ route('cart.add') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="product_id" value="{{ $product->id }}" />
+                            <button class="w-full text-center text-white px-3 py-1 rounded-md bg-slate-500 hover:bg-slate-600 focus:outline-none focus:ring-0 focus:ring-transparent active:bg-slate-600" type="submit">
+                                Add to cart
+                            </button>
+                        </form>
+                    @elseif ($product->stock == 0)
+                        <a class="block mb-3 mt-3 text-center text-white px-3 py-1 rounded-md bg-red-500 hover:bg-red-500 focus:outline-none focus:ring-0 focus:ring-transparent active:bg-red-500">
+                            Out of stock
+                        </a>
+                    @endif
                 </div>
             </div>
         </div>
