@@ -23,7 +23,7 @@
     <div class="mx-5">
     <div class="p-4 shadow-2xl shadow-black rounded-lg backdrop-blur-3xl border-slate-500 border-4">
         <h1 class="text-white text-lg text-center pb-5">Edit a product</h1>
-    <form method="POST" action="{{route('product.update', ['product' => $product])}}">
+    <form method="POST" action="{{route('product.update', ['product' => $product])}}"  enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div>
@@ -38,17 +38,35 @@
             <label class="text-white" for="price">Price</label>
             <input class="block mt-1 w-full rounded-md focus:border-slate-600 focus:ring-slate-600 border-2" type="text" name="price" id="price" placeholder="Price" value="{{$product->price}}">
         </div>
-        <div class="pt-2">
-        <label class="text-white" for="category_id">Product Type</label>
-        <select class="block mt-1 w-full rounded-md focus:border-slate-600 focus:ring-slate-600 border-2" name="category_id" id="category_id" required>
-            @foreach($category_id as $id)
-                <option value="{{ $id->value }}">{{ $id->name }}</option>
-            @endforeach
-        </select>
+        <div x-data="{ open: false, selected: '{{$product->category_id}}', selectedValue: '{{$product->category_id}}' }" class="relative pt-2">
+            <label class="text-white" for="category_id">Product Type</label>
+            <div @click="open = !open" class="appearance-none block mt-1 w-full rounded-md border-2 cursor-pointer focus:border-slate-600 focus:ring-slate-600 px-4 py-1  bg-white">
+                <div class="flex items-center justify-between">
+                    <span x-text="selected"></span>
+                    <i :class="open ? 'fa-square-caret-up' : 'fa-square-caret-down'" class="fa-regular fa-square-caret-down float-right text-2xl text-slate-500"></i>
+                </div>
+            </div>
+            <div x-show="open" @click.away="open = false" class="absolute mt-1 w-full rounded-md shadow-lg bg-white overflow-y-auto">
+                <div class="max-h-40 overflow-y-auto">
+                    @foreach($category_id as $id)
+                    <div @click="selected = '{{ $id->name }}'; selectedValue = '{{ $id->value }}'; open = false"
+                         class="cursor-pointer px-4 py-2 hover:rounded-md hover:text-white hover:bg-slate-500">
+                        {{ $id->name }}
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+            <input type="hidden" name="category_id" :value="selectedValue">
         </div>
         <div class="pt-2">
             <label class="text-white" for="image">Image</label>
-            <input class="block mt-1 w-full rounded-md focus:border-slate-600 focus:ring-slate-600 border-2" type="text" name="image" id="image" placeholder="Image description" value="{{$product->image}}">
+            <div class="bg-white h-10 mt-1 w-full rounded-md">
+                <div class="flex items-center">
+                    <label for="file-upload" class="block w-full text-center sm:w-auto rounded-md h-full bg-slate-500 text-white px-4 py-2 cursor-pointer hover:bg-slate-600">Upload file</label>
+                    <input id="file-upload" type="file" name="image" id="image" placeholder="Image description" class="hidden" />
+                    <span id="file-name" class="hidden sm:inline-block ml-4 text-black max-w-xs truncate overflow-hidden">No file chosen</span>
+                </div>
+            </div>
         </div>
         <div class="pt-2">
             <label class="text-white" for="stock">Stock</label>

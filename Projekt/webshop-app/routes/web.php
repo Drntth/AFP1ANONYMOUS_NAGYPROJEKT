@@ -28,7 +28,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/dashboard/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/dashboard/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
 });
 
 Route::middleware(['auth', CheckAdmin::class])->group(function () {
@@ -44,10 +43,10 @@ Route::middleware(['auth', CheckAdmin::class])->group(function () {
     Route::delete('/dashboard/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
     Route::put('/dashboard/users/{id}/role', [UserController::class, 'updateRole'])->name('users.updateRole');
 });
+
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
 Route::post('/cart/remove', [CartController::class, 'remove'])->name('cart.remove');
 Route::post('/cart/update', [CartController::class, 'update'])->name('cart.update');
-
 
 require __DIR__.'/auth.php';
