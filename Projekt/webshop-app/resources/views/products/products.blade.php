@@ -4,7 +4,11 @@
         <div class="container mx-auto px-4 grid grid-cols-1 gap-10 mb-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             @foreach ($products as $product)
             <div class="group relative overflow-hidden rounded-lg bg-white shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-                <img src="{{ asset($product->image) }}" class="h-56 w-full object-cover" alt="Image" />
+                @if (File::exists(base_path('public/' . $product->image)) && !empty($product->image))
+                    <img src="{{ asset($product->image) }}" class="h-56 w-full object-cover" alt="Image" />
+                @else
+                    <img src="{{ asset('default.png') }}" class="h-56 w-full object-cover" alt="Image" />
+                @endif
                 <div class="p-4">
                     <h5 class="text-xl font-bold text-gray-800">{{ $product->name }}</h5>
                     <p class="mt-2 font-semibold text-gray-900">Price: {{ $product->price }} €</p>
