@@ -8,13 +8,11 @@ class Navbar extends Component
 {
     public $isDashboard;
     public $isMainPage;
-    public $isProducts;
 
-    public function __construct($isDashboard = false, $isMainPage = false, $isProducts = false)
+    public function __construct($isDashboard = false, $isMainPage = false)
     {
         $this->isDashboard = $isDashboard;
         $this->isMainPage = $isMainPage;
-        $this->isProducts = $isProducts;
     }
 
     public function render()
