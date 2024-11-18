@@ -17,7 +17,7 @@
                                 <img class="b-4" src="{{ asset($product->image) }}" alt="image">
                             </a>
                         @else
-                            <img src="{{ asset('images/default.png') }}" class="b-4" alt="Image not found">
+                            <img src="{{ asset('default.png') }}" class="b-4" alt="Image not found">
                         @endif
                     </div>
                     <div class="ml-4 flex-1 flex flex-col space-y-4">

@@ -9,7 +9,7 @@
                                 <img class="sm:h-60 mx-auto rounded-lg bg-white border-slate-500 border-4" src="{{ asset($product->image) }}" alt="image">
                             </a>
                         @else
-                            <img src="{{ asset('images/default.png') }}" class="sm:h-60 mx-auto rounded-lg border-slate-500 border-4" alt="Image not found">
+                            <img src="{{ asset('default.png') }}" class="sm:h-60 mx-auto rounded-lg border-slate-500 border-4" alt="Image not found">
                         @endif
                     </div>
                 </div>
