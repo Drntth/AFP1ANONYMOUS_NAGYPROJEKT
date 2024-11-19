@@ -7,7 +7,7 @@
             @foreach(session('cart') as $id => $details)
                 <div class="bg-white p-4 rounded-lg shadow-lg mb-4">
                     <div class="flex items-center justify-between">
-                        <div class="text-md text-gray-950">
+                        <div class="text-md text-gray-950 w-2/5">
                             <h3 class="font-semibold">{{ $details['name'] }}</h3>
                         </div>
                         <div class="text-md text-gray-950">
@@ -32,9 +32,14 @@
                     </div>
                 </div>
         @endforeach
-            <div class="bg-white p-4 rounded-lg shadow-lg text-center text-md text-gray-950 font-semibold">
+            <div class="bg-white p-4 rounded-lg shadow-lg flex justify-between items-center">
+            <div class="text-md text-gray-950 font-semibold">
                 Total: <span class="">{{ array_sum(array_column(session('cart'), 'price')) }} €</span>
             </div>
+            <a href="" class="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-800">
+                Checkout
+            </a>
+        </div>
         @else
             <div class="bg-white p-4 rounded-lg shadow-lg text-center text-md text-gray-950 font-semibold">
                 Your cart is empty!

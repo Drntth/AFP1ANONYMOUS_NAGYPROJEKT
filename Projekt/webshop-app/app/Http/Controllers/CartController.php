@@ -36,7 +36,14 @@ class CartController extends Controller
     {
         $cart = session()->get('cart');
         if (isset($cart[$request->product_id])) {
-            $cart[$request->product_id]['quantity'] = $request->quantity;
+
+            $product = Product::find($request->product_id);
+            $productStock = $product->stock;
+            $requestedQuantity = max(1, min($request->quantity, $productStock));
+
+            $cart[$request->product_id]['quantity'] = $requestedQuantity;
+            $cart[$request->product_id]['price'] = $product->price * $requestedQuantity;
+
             session()->put('cart', $cart);
             return redirect()->route('cart.index')->with('success', 'Cart updated successfully');
         }
