@@ -38,10 +38,6 @@
                         </form>
                     </div>
                 </div>
-
-                <div class="flex space-x-2">
-
-                </div>
             </div>
         </div>
         @endforeach
