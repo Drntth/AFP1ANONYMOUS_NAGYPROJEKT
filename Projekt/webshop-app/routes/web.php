@@ -7,11 +7,11 @@ use App\Http\Controllers\UserController;
 use App\Http\Middleware\CheckAdmin;
 use App\Models\Product;
 use App\Http\Controllers\CartController;
-
+use App\Http\Controllers\CheckoutController;
 
 Route::get('/', function () {
     $products = Product::all();
-    return view('welcome' , ['products' => $products]);
+    return view('welcome');
 });
 
 Route::get('/dashboard', function () {
@@ -48,5 +48,15 @@ Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
 Route::post('/cart/remove', [CartController::class, 'remove'])->name('cart.remove');
 Route::post('/cart/update', [CartController::class, 'update'])->name('cart.update');
+
+Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
+Route::get('checkout/shipping', function () {
+    return view('checkout.shipping');
+})->name('checkout.shipping');
+Route::get('checkout/payment', function () {
+    return view('checkout.payment');
+})->name('checkout.payment');
+
+
 
 require __DIR__.'/auth.php';
