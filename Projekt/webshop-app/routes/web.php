@@ -11,10 +11,7 @@ use App\Http\Controllers\ContactController;
 
 
 Route::get('/', function () {
-    $products = Product::where('stock', '>', 0)
-                    ->where('stock', '<', 4)
-                    ->take(4) //a főoldalon maximum 4 véletlenszerű akciós termék jelenik meg
-                    ->get();
+    $products = Product::whereBetween('stock', [1, 3])->get();
     return view('welcome' , ['products' => $products]);
 });
 
@@ -32,6 +29,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/dashboard/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/dashboard/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+    Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
+    Route::post('/cart/remove', [CartController::class, 'remove'])->name('cart.remove');
+    Route::post('/cart/update', [CartController::class, 'update'])->name('cart.update');
 });
 
 Route::middleware(['auth', CheckAdmin::class])->group(function () {
@@ -48,18 +49,7 @@ Route::middleware(['auth', CheckAdmin::class])->group(function () {
     Route::put('/dashboard/users/{id}/role', [UserController::class, 'updateRole'])->name('users.updateRole');
 });
 
-
-
-Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
-Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
-Route::post('/cart/remove', [CartController::class, 'remove'])->name('cart.remove');
-Route::post('/cart/update', [CartController::class, 'update'])->name('cart.update');
-
 Route::get('/contact', [ContactController::class, 'create'])->name('contact.create');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
-
-
-
-
 
 require __DIR__.'/auth.php';

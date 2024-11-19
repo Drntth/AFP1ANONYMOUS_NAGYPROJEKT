@@ -6,6 +6,7 @@
     $price = $product->price;
     if($discount){
         $price = (100 - intval($discount)) * ($product->price / 100);
+        $price = round($price);
     }
 @endphp
 
@@ -15,7 +16,7 @@
         <p>{{$badge}}</p>
     </div>
     @endif
-    @if (File::exists(base_path('public/' . $product->image)) && !empty($product->image)) 
+    @if (File::exists(base_path('public/' . $product->image)) && !empty($product->image))
     <img src="{{ asset($product->image) }}" class="h-56 w-full object-cover" alt="Image" />
     @else
     <img src="{{ asset('default.png') }}" class="h-56 w-full object-cover" alt="Image" />
