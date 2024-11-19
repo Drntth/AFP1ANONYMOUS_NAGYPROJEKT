@@ -11,7 +11,10 @@ use App\Http\Controllers\ContactController;
 
 
 Route::get('/', function () {
-    $products = Product::all();
+    $products = Product::where('stock', '>', 0)
+                    ->where('stock', '<', 4)
+                    ->take(4) //a főoldalon maximum 4 véletlenszerű akciós termék jelenik meg
+                    ->get();
     return view('welcome' , ['products' => $products]);
 });
 
