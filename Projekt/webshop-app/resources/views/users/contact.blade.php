@@ -7,6 +7,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-custom-bg bg-auto">
+    <!-- Hibák Megjelenítése -->
     <div x-data="{ open: @if($errors->any()) true @else false @endif }" x-show="open" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
         <div class="bg-custom-bg p-6 rounded-lg shadow-lg w-11/12 max-w-md text-center">
             <h2 class="text-white font-bold text-xl mb-4">Errors</h2>
@@ -17,21 +18,45 @@
                     @endforeach
                 </ul>
             </div>
-            <button @click="open = false" class="text-white px-3 py-1 mt-5 rounded-md bg-slate-500 hover:bg-slate-600 focus:outline-none focus:ring-0 focus:ring-transparent ring-offset-transparent active:bg-slate-600">Close</button>
+            <button 
+                @click="open = false; window.location.href='{{ route('contact.create') }}';" 
+                class="text-white px-3 py-1 mt-5 rounded-md bg-slate-500 hover:bg-slate-600 focus:outline-none focus:ring-0 focus:ring-transparent ring-offset-transparent active:bg-slate-600">
+                Close
+            </button>
         </div>
     </div>
 
-    <!-- Success message -->
+    <!-- Sikeres Üzenet -->
     @if(session('success'))
-    <div class="fixed inset-0 flex items-center justify-center bg-green-500 bg-opacity-75 z-50">
+    <div x-data="{ open: true }" x-show="open" class="fixed inset-0 flex items-center justify-center bg-green-500 bg-opacity-75 z-50">
         <div class="bg-white p-6 rounded-lg shadow-lg text-center">
             <h2 class="text-green-800 font-bold text-xl mb-4">Success</h2>
             <p class="text-green-800">{{ session('success') }}</p>
-            <button @click="open = false" class="text-green-800 px-3 py-1 mt-5 rounded-md bg-green-300 hover:bg-green-400 focus:outline-none focus:ring-0 focus:ring-transparent ring-offset-transparent active:bg-green-500">Close</button>
+            <button 
+                @click="open = false; window.location.href='{{ route('contact.create') }}';" 
+                class="text-green-800 px-3 py-1 mt-5 rounded-md bg-green-300 hover:bg-green-400 focus:outline-none focus:ring-0 focus:ring-transparent ring-offset-transparent active:bg-green-500">
+                Close
+            </button>
         </div>
     </div>
     @endif
 
+    <!-- Sikertelen Üzenet -->
+    @if(session('error'))
+    <div x-data="{ open: true }" x-show="open" class="fixed inset-0 flex items-center justify-center bg-red-500 bg-opacity-75 z-50">
+        <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+            <h2 class="text-red-800 font-bold text-xl mb-4">Error</h2>
+            <p class="text-red-800">{{ session('error') }}</p>
+            <button 
+                @click="open = false; window.location.href='{{ route('contact.create') }}';" 
+                class="text-red-800 px-3 py-1 mt-5 rounded-md bg-red-300 hover:bg-red-400 focus:outline-none focus:ring-0 focus:ring-transparent ring-offset-transparent active:bg-red-500">
+                Close
+            </button>
+        </div>
+    </div>
+    @endif
+
+    <!-- Contact Form -->
     <div class="max-w-xl mx-auto space-y-6 place-content-center h-screen">
         <div class="mx-5">
             <div class="p-4 shadow-2xl shadow-black rounded-lg backdrop-blur-3xl border-slate-500 border-4">
