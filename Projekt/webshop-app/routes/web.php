@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Middleware\CheckAdmin;
 use App\Models\Product;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ContactController;
 
 
@@ -33,6 +34,13 @@ Route::middleware('auth')->group(function () {
     Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
     Route::post('/cart/remove', [CartController::class, 'remove'])->name('cart.remove');
     Route::post('/cart/update', [CartController::class, 'update'])->name('cart.update');
+    Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
+    Route::get('checkout/shipping', function () {
+        return view('checkout.shipping');
+    })->name('checkout.shipping');
+    Route::get('checkout/payment', function () {
+        return view('checkout.payment');
+    })->name('checkout.payment');
 });
 
 Route::middleware(['auth', CheckAdmin::class])->group(function () {
@@ -52,13 +60,6 @@ Route::middleware(['auth', CheckAdmin::class])->group(function () {
 Route::get('/contact', [ContactController::class, 'create'])->name('contact.create');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
-Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
-Route::get('checkout/shipping', function () {
-    return view('checkout.shipping');
-})->name('checkout.shipping');
-Route::get('checkout/payment', function () {
-    return view('checkout.payment');
-})->name('checkout.payment');
 
 
 
