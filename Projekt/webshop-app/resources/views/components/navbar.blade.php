@@ -13,7 +13,7 @@
 
             @if ($isMainPage)
                 <a href="/products" class="text-gray-300 hover:text-white">Products</a>
-                <a href="/" class="text-gray-300 hover:text-white">Contact</a>
+                <a href="/contact" class="text-gray-300 hover:text-white">Contact</a>
             @elseif ($isDashboard)
                 @auth
                     @if (Auth::user()->role === 'admin')
