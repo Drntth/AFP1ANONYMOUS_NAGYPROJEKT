@@ -7,7 +7,6 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-custom-bg bg-auto">
-    <!-- Hibák Megjelenítése -->
     <div x-data="{ open: @if($errors->any()) true @else false @endif }" x-show="open" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
         <div class="bg-custom-bg p-6 rounded-lg shadow-lg w-11/12 max-w-md text-center">
             <h2 class="text-white font-bold text-xl mb-4">Errors</h2>
@@ -18,45 +17,13 @@
                     @endforeach
                 </ul>
             </div>
-            <button 
-                @click="open = false; window.location.href='{{ route('contact.create') }}';" 
+            <button
+                @click="open = false; window.location.href='{{ route('contact.create') }}';"
                 class="text-white px-3 py-1 mt-5 rounded-md bg-slate-500 hover:bg-slate-600 focus:outline-none focus:ring-0 focus:ring-transparent ring-offset-transparent active:bg-slate-600">
                 Close
             </button>
         </div>
     </div>
-
-    <!-- Sikeres Üzenet -->
-    @if(session('success'))
-    <div x-data="{ open: true }" x-show="open" class="fixed inset-0 flex items-center justify-center bg-green-500 bg-opacity-75 z-50">
-        <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-            <h2 class="text-green-800 font-bold text-xl mb-4">Success</h2>
-            <p class="text-green-800">{{ session('success') }}</p>
-            <button 
-                @click="open = false; window.location.href='{{ route('contact.create') }}';" 
-                class="text-green-800 px-3 py-1 mt-5 rounded-md bg-green-300 hover:bg-green-400 focus:outline-none focus:ring-0 focus:ring-transparent ring-offset-transparent active:bg-green-500">
-                Close
-            </button>
-        </div>
-    </div>
-    @endif
-
-    <!-- Sikertelen Üzenet -->
-    @if(session('error'))
-    <div x-data="{ open: true }" x-show="open" class="fixed inset-0 flex items-center justify-center bg-red-500 bg-opacity-75 z-50">
-        <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-            <h2 class="text-red-800 font-bold text-xl mb-4">Error</h2>
-            <p class="text-red-800">{{ session('error') }}</p>
-            <button 
-                @click="open = false; window.location.href='{{ route('contact.create') }}';" 
-                class="text-red-800 px-3 py-1 mt-5 rounded-md bg-red-300 hover:bg-red-400 focus:outline-none focus:ring-0 focus:ring-transparent ring-offset-transparent active:bg-red-500">
-                Close
-            </button>
-        </div>
-    </div>
-    @endif
-
-    <!-- Contact Form -->
     <div class="max-w-xl mx-auto space-y-6 place-content-center h-screen">
         <div class="mx-5">
             <div class="p-4 shadow-2xl shadow-black rounded-lg backdrop-blur-3xl border-slate-500 border-4">
@@ -64,24 +31,23 @@
                 <form method="POST" action="{{ route('contact.store') }}">
                     @csrf
                     @method('POST')
-
                     <div>
                         <label class="text-white" for="name">Name</label>
-                        <input class="block mt-1 w-full rounded-md focus:border-slate-600 focus:ring-slate-600 border-2" type="text" name="name" id="name" placeholder="Name" value="{{ old('name') }}" required>
+                        <input class="block mt-1 w-full rounded-md focus:border-slate-600 focus:ring-slate-600 border-2" type="text" name="name" id="name" placeholder="Name" value="{{ old('name') }}">
                     </div>
 
                     <div class="pt-2">
                         <label class="text-white" for="email">Email</label>
-                        <input class="block mt-1 w-full rounded-md focus:border-slate-600 focus:ring-slate-600 border-2" type="email" name="email" id="email" placeholder="Email" value="{{ old('email') }}" required>
+                        <input class="block mt-1 w-full rounded-md focus:border-slate-600 focus:ring-slate-600 border-2" type="email" name="email" id="email" placeholder="Email" value="{{ old('email') }}">
                     </div>
 
                     <div class="pt-2">
                         <label class="text-white" for="message">Message</label>
-                        <textarea class="block mt-1 w-full rounded-md focus:border-slate-600 focus:ring-slate-600 border-2" name="message" id="message" placeholder="Your message" required>{{ old('message') }}</textarea>
+                        <textarea class="block mt-1 w-full rounded-md focus:border-slate-600 focus:ring-slate-600 border-2" name="message" id="message" placeholder="Your message">{{ old('message') }}</textarea>
                     </div>
 
                     <div class="pt-5 flex justify-between flex-col space-y-2 sm:flex-row sm:space-x-2 sm:space-y-0">
-                        <a href="{{ url()->previous() }}" class="text-center text-white px-3 py-1 rounded-md bg-slate-500 hover:bg-slate-600 focus:outline-none focus:ring-0 focus:ring-transparent ring-offset-transparent active:bg-slate-600">Back</a>
+                        <a href="/" class="text-center text-white px-3 py-1 rounded-md bg-slate-500 hover:bg-slate-600 focus:outline-none focus:ring-0 focus:ring-transparent ring-offset-transparent active:bg-slate-600">Back</a>
                         <button class="text-white px-3 py-1 rounded-md bg-slate-500 hover:bg-slate-600 focus:outline-none focus:ring-0 focus:ring-transparent ring-offset-transparent active:bg-slate-600" type="submit">Send Message</button>
                     </div>
                 </form>
