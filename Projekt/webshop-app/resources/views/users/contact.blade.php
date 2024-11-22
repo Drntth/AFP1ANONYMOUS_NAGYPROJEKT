@@ -6,7 +6,7 @@
     <title>Contact Us</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-custom-bg bg-auto">
+<body class="bg-custom-bg bg-fixed bg-cover">
     <div x-data="{ open: @if($errors->any()) true @else false @endif }" x-show="open" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
         <div class="bg-custom-bg p-6 rounded-lg shadow-lg w-11/12 max-w-md text-center">
             <h2 class="text-white font-bold text-xl mb-4">Errors</h2>

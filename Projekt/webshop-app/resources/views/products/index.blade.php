@@ -25,6 +25,7 @@
                         <p class="text-sm text-gray-600">Description: {{$product->description}}</p>
                         <p class="text-xs text-gray-500">Category: {{$product->category_id}}</p>
                         <p class="text-xs text-gray-500 mt-auto">Stock: {{$product->stock}} pcs</p>
+                        <p class="text-xs text-gray-500 mt-auto">Sale price: {{$product->sale_price}} €</p>
                     </div>
                     <div class="ml-auto text-lg font-bold flex-0 flex flex-col space-y-16">
                         <div class="text-right">Price: {{$product->price}} €</div>

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string("name");
             $table->text("description");
             $table->integer("price");
+            $table->integer("sale_price");
             $table->enum('category_id', ['CPU', 'GPU', 'RAM', 'Motherboard', 'PSU', 'Storage', 'Case', 'Cooling']);
             $table->integer("stock");
             $table->string("image");
