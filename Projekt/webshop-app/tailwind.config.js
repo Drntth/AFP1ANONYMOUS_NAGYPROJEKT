@@ -20,6 +20,9 @@ export default {
             colors: {
                 'custom-dark': '#2A2A38',
             },
+            boxShadow: {
+                'all-sides': '0 4px 6px rgba(0, 0, 0, 0.15), 0 -4px 6px rgba(0, 0, 0, 0.15), 4px 0 6px rgba(0, 0, 0, 0.15), -4px 0 6px rgba(0, 0, 0, 0.15)',
+            },
         },
     },
 
