@@ -34,7 +34,7 @@
         @endforeach
             <div class="bg-white p-4 rounded-lg shadow-lg flex justify-between items-center">
             <div class="text-md text-gray-950 font-semibold">
-                Total: <span class="">{{ array_sum(array_column(session('cart'), 'price')) }} €</span>
+                Total: <span class="">{{ array_sum(array_map(fn($item) => $item['price'], session('cart'))) }} €</span>
             </div>
             <a href="" class="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-800">
                 Checkout

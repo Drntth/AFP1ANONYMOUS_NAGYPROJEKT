@@ -6,7 +6,7 @@
     <title>Add products</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-custom-bg bg-auto">
+<body class="bg-custom-bg bg-fixed bg-cover">
     <div x-data="{ open: @if($errors->any()) true @else false @endif }" x-show="open" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
         <div class="bg-custom-bg p-6 rounded-lg shadow-lg w-11/12 max-w-md text-center">
             <h2 class="text-white font-bold text-xl mb-4">Errors</h2>
@@ -38,6 +38,10 @@
         <div class="pt-2">
             <label class="text-white" for="price">Price</label>
             <input class="block mt-1 w-full rounded-md focus:border-slate-600 focus:ring-slate-600 border-2" type="text" name="price" id="price" placeholder="Price">
+        </div>
+        <div class="pt-2">
+            <label class="text-white" for="price">Sale price</label>
+            <input class="block mt-1 w-full rounded-md focus:border-slate-600 focus:ring-slate-600 border-2" type="text" name="sale_price" id="sale_price" placeholder="Sale price">
         </div>
         <div x-data="{ open: false, selected: 'Choose an option', selectedValue: '' }" class="relative pt-2">
             <label class="text-white" for="category_id">Product Type</label>
