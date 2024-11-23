@@ -20,10 +20,23 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/products', function () {
-    $products = Product::all();
-    return view('products.products' , ['products' => $products]);
+    $category = request('category');
+    if ($category) {
+        $products = Product::where('category_id', $category)->get();
+    } else {
+        $products = Product::all();
+    }
+    $categories = App\Enums\category_id_enum::cases();
+    return view('products.products', [
+        'products' => $products,
+        'categories' => $categories,
+    ]);
 });
 Route::get('/products/{id}', [ProductController::class, 'single'])->name('product.single');
+
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard/profile', [ProfileController::class, 'edit'])->name('profile.edit');

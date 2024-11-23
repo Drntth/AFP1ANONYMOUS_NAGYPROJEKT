@@ -33,12 +33,12 @@
                     @method('POST')
                     <div>
                         <label class="text-white" for="name">Name</label>
-                        <input class="block mt-1 w-full rounded-md focus:border-slate-600 focus:ring-slate-600 border-2" type="text" name="name" id="name" placeholder="Name" value="{{ old('name') }}">
+                        <input class="block mt-1 w-full rounded-md focus:border-slate-600 focus:ring-slate-600 border-2" type="text" name="name" id="name" placeholder="Name" value="{{ old('name', auth()->check() ? auth()->user()->name : '') }}">
                     </div>
 
                     <div class="pt-2">
                         <label class="text-white" for="email">Email</label>
-                        <input class="block mt-1 w-full rounded-md focus:border-slate-600 focus:ring-slate-600 border-2" type="email" name="email" id="email" placeholder="Email" value="{{ old('email') }}">
+                        <input class="block mt-1 w-full rounded-md focus:border-slate-600 focus:ring-slate-600 border-2" type="email" name="email" id="email" placeholder="Email" value="{{ old('email', auth()->check() ? auth()->user()->email : '') }}">
                     </div>
 
                     <div class="pt-2">
