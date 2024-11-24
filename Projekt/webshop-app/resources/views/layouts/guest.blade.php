@@ -14,10 +14,9 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-custom-bg bg-cover">
-
-            <div class="backdrop-blur-3xl w-full sm:max-w-md mt-6 px-6 py-4 shadow-2xl overflow-hidden sm:rounded-lg shadow-black">
+    <body class="font-sans text-gray-900 antialiased bg-custom-bg bg-cover">
+        <div class="min-h-screen flex flex-col justify-center items-center pt-6 sm:pt-0 mx-5">
+            <div class="backdrop-blur-3xl w-full sm:max-w-md mt-6 px-6 py-4 shadow-2xl overflow-hidden rounded-lg shadow-black">
                 {{ $slot }}
             </div>
         </div>
