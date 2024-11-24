@@ -9,11 +9,64 @@ use Illuminate\Validation\Rule;
 
 class ProductController extends Controller
 {
-    public function index()
-    {
-        $products = Product::all();
-        return view('products.index', ['products' => $products]); //itt lehet nem kell az s betű // de kellett
+    public function index(Request $request)
+{
+    $category = $request->get('category');
+    $sort = $request->get('sort', 'name_asc');
+    $perPage = $request->get('per_page', 'all');
 
+    $query = Product::query();
+    if ($category) {
+        $query->where('category_id', $category);
+    }
+
+    $query->sortBy($sort);
+
+    if ($perPage === 'all') {
+        $products = $query->get(); // Összes termék
+    } else {
+        $perPage = (int) $perPage; // Konvertáljuk biztosan számmá
+        $products = $query->paginate($perPage)->appends($request->all());
+    }
+
+    $categories = category_id_enum::cases();
+
+    return view('products.index', [
+        'products' => $products,
+        'categories' => $categories,
+        'sort' => $sort,
+        'perPage' => $perPage,
+        'selectedCategory' => $category,
+    ]);
+}
+
+    public function showProducts(Request $request)
+    {
+        $category = $request->get('category');
+        $sort = $request->get('sort', 'name_asc');
+        $perPage = $request->get('per_page', 'all');
+
+        $query = Product::query();
+        if ($category) {
+            $query->where('category_id', $category);
+        }
+
+        $query->sortBy($sort);
+
+        if ($perPage === 'all') {
+            $products = $query->get();
+        } else {
+            $products = $query->paginate($perPage)->appends($request->all());
+        }
+        $categories = category_id_enum::cases();
+
+        return view('products.products', [
+            'products' => $products,
+            'categories' => $categories,
+            'sort' => $sort,
+            'perPage' => $perPage,
+            'selectedCategory' => $category,
+        ]);
     }
 
     public function add()
