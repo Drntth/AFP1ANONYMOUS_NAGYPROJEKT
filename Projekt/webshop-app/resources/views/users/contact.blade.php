@@ -1,19 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-<body class="bg-custom-bg bg-fixed bg-cover">
+<x-app-layout>  
     <div x-data="{ open: @if($errors->any()) true @else false @endif }" x-show="open" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
         <div class="bg-custom-bg p-6 rounded-lg shadow-lg w-11/12 max-w-md text-center">
             <h2 class="text-white font-bold text-xl mb-4">Errors</h2>
             <div id="error-messages" class="text-white font-bold text-left ml-2">
                 <ul>
                     @foreach ($errors->all() as $error)
-                        <li>- {{ $error }}</li>
+                    <li>- {{ $error }}</li>
                     @endforeach
                 </ul>
             </div>
@@ -54,5 +46,4 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+</x-app-layout>

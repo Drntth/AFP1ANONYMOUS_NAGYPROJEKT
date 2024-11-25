@@ -8,6 +8,7 @@ use App\Http\Middleware\CheckAdmin;
 use App\Models\Product;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ChatbotController;
 
 
 Route::get('/', function () {
@@ -52,5 +53,8 @@ Route::middleware(['auth', CheckAdmin::class])->group(function () {
 
 Route::get('/contact', [ContactController::class, 'create'])->name('contact.create');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
+Route::post('/chatbot', [ChatbotController::class, 'handleRequest']);
+// Route::middleware('auth:api')->post('/chatbot', [ChatbotController::class, 'handleRequest']);
 
 require __DIR__.'/auth.php';
