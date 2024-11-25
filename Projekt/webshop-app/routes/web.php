@@ -19,19 +19,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/products', function () {
-    $category = request('category');
-    if ($category) {
-        $products = Product::where('category_id', $category)->get();
-    } else {
-        $products = Product::all();
-    }
-    $categories = App\Enums\category_id_enum::cases();
-    return view('products.products', [
-        'products' => $products,
-        'categories' => $categories,
-    ]);
-});
+Route::get('/products', [ProductController::class, 'showProducts'])->name('products.products');
 Route::get('/products/{id}', [ProductController::class, 'single'])->name('product.single');
 
 Route::get('/about', function () {
