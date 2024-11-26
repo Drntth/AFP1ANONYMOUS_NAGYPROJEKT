@@ -26,7 +26,7 @@
                         Total: <span>{{ array_sum(array_column(session('cart'), 'price')) }} €</span>
                     </div>
                     <a href="{{ route('checkout.shipping') }}" class="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-800">
-                        Confirm Order
+                        Proceed to Shipping Information
                     </a>
                 </div>
             </div>
