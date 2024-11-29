@@ -8,7 +8,6 @@
             @csrf
             <div class="space-y-6">
                 <div>
-                    <h2 class="text-lg font-bold text-black mb-4">Shipping Information</h2>
                     <div class="flex flex-col">
                         <label for="name" class="text-lg text-black">Full Name</label>
                         <input type="text" name="name" id="name" class="border-gray-600 rounded-md p-3 mt-2 focus:outline-none focus:ring-2 focus:ring-gray-500" required>
@@ -80,10 +79,10 @@
                 if (method.value === 'express') shippingCost = 10.00;
                 if (method.value === 'next_day') shippingCost = 20.00;
                 totalPriceElement.textContent = `€${(basePrice + shippingCost).toFixed(2)}`;
-            });
 
-            shippingMethodInput.value = method.value;
-            shippingCostInput.value = shippingCost;
+                shippingMethodInput.value = method.value;
+                shippingCostInput.value = shippingCost.toFixed(2);
+            });
         });
     </script>
 </x-app-layout>

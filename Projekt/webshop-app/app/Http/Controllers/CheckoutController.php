@@ -7,6 +7,7 @@ use App\Models\Order;
 use App\Models\OrderItem;
 use Illuminate\Container\Attributes\Log;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 
 
 class CheckoutController extends Controller
@@ -49,23 +50,42 @@ class CheckoutController extends Controller
             return redirect()->route('cart.index')->with('error', 'Your cart is empty!');
         }
 
-        session()->put('shipping_info', $request->all());
-        //dd(session()->all());
+        $basePrice = array_sum(array_column($cart, 'price'));
+
+        $shippingCost = 0;
+        switch ($request->shipping_method) {
+            case 'standard':
+             $shippingCost = 5.00;
+                break;
+            case 'express':
+                $shippingCost = 10.00;
+                break;
+            case 'next_day':
+                $shippingCost = 20.00;
+             break;
+        }
+
+        $totalPrice = $basePrice + $shippingCost;
+
+        session()->put('shipping_info', array_merge($request->all(), ['shipping_cost' => $shippingCost]));
+
 
         $order = Order::create([
+            'user_id' => Auth::user()->id,
             'name' => $request->name,
             'email' => $request->email,
             'address' => $request->address,
             'city' => $request->city,
             'postal_code' => $request->postal_code,
             'phone_number' => $request->phone_number,
-            'total_price' => array_sum(array_column($cart, 'price')),
+            'total_price' => $totalPrice,
             'payment_method' => null,  // Payment method will be set later THERE IS NO PAYMENT METHOD AT ALL IN DATABASE
+            'shipping_method' => $request->shipping_method,
         ]);
 
         foreach ($cart as $productId => $item) {
             OrderItem::create([
-                'order_id' => $order->id,  // Associate the order ID
+                'order_id' => $order->id,
                 'product_id' => $productId,
                 'quantity' => $item['quantity'],
                 'price' => $item['price'],
@@ -102,36 +122,25 @@ class CheckoutController extends Controller
             'payment_method' => 'required|string|in:credit_card,cash_on_delivery',
         ]);
 
-        $shippingInfo = session('shipping_info');
-        $cart = session()->get('cart');
-        if (!$cart || empty($cart)) {
-            return redirect()->route('cart.index')->with('error', 'Your cart is empty!');
+        $orderId = session('order_id');
+        if (!$orderId) {
+            return redirect()->route('checkout.index')->with('error', 'Order not found.');
         }
 
-        $order = Order::create([
-            'name' => $shippingInfo['name'],
-            'email' => $shippingInfo['email'],
-            'address' => $shippingInfo['address'],
-            'city' => $shippingInfo['city'],
-            'postal_code' => $shippingInfo['postal_code'],
-            'phone_number' => $shippingInfo['phone_number'],
-            'total_price' => array_sum(array_column($cart, 'price')),
+        $order = Order::find($orderId);
+        if (!$order) {
+            return redirect()->route('checkout.index')->with('error', 'Order not found.');
+        }
+
+        $order->update([
             'payment_method' => $request->payment_method,
         ]);
 
-        foreach ($cart as $productId => $item) {
-            OrderItem::create([
-                'order_id' => $order->id,
-                'product_id' => $productId,
-                'quantity' => $item['quantity'],
-                'price' => $item['price'],
-            ]);
-        }
+        session()->forget(['cart', 'shipping_info', 'order_id']);
 
-        session()->forget(['cart', 'shipping_info']);
-
-        return redirect()->route('checkout.order.completed');
+        return redirect()->route('checkout.order.completed')->with('success', 'Payment successful!');
     }
+
 
 
     public function orderCompleted()
@@ -141,18 +150,14 @@ class CheckoutController extends Controller
 
     public function processPayment()
     {
-        // Display a page to enter credit card details (this would be your payment.blade.php)
+
         return view('checkout.payment');
     }
 
     public function handlePayment(Request $request)
     {
-        // Process the payment (this might be an external payment gateway API call)
-        // You could check for successful payment here, update the order status, etc.
 
-        // For simplicity, let's assume payment is successful.
-        // Update the order as paid:
-        $order = Order::latest()->first(); // Retrieve the most recent order
+        $order = Order::latest()->first();
 
         if (!$order) {
             return redirect()->route('checkout.index')->with('error', 'No order found to process payment.');
@@ -160,12 +165,10 @@ class CheckoutController extends Controller
 
         $order->update(['status' => 'paid']);
 
-        // Clear the session or any remaining cart or payment data
         session()->forget('cart');
         session()->forget('shipping_info');
 
-        // Redirect to the order confirmation page
-        return redirect()->route('checkout.order.completed')->with('success', 'Payment successful. Your order has been placed!');
+        return redirect()->route('checkout.index')->with('success', 'Payment successful. Your order has been placed!');
     }
 
 }

@@ -16,11 +16,14 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id')->nullable();
             $table->decimal('total_price', 10, 2);
             $table->string('status')->default('pending');
+            $table->string('payment_method')->nullable();
             $table->string('name');
+            $table->string('email');
             $table->string('address');
             $table->string('city');
             $table->string('postal_code');
             $table->string('phone_number');
+            $table->string('shipping_method');
             $table->timestamps();
         });
 
