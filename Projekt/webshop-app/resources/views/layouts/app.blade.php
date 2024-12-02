@@ -24,4 +24,5 @@
             @include('layouts.footer')
         </div>
     </body>
+    <x-chatbot></x-chatbot>
 </html>

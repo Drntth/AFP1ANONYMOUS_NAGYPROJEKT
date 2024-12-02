@@ -2,6 +2,11 @@ import './bootstrap';
 
 import Alpine from 'alpinejs';
 
+import initChatbot from './chatbot';
+
+initChatbot()
+
+
 window.Alpine = Alpine;
 
 Alpine.start();
