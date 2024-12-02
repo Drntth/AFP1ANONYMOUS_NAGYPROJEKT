@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Middleware\CheckAdmin;
 use App\Models\Product;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ContactController;
 
 Route::get('/', function () {
@@ -29,10 +30,23 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/dashboard/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/dashboard/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
     Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
     Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
     Route::post('/cart/remove', [CartController::class, 'remove'])->name('cart.remove');
     Route::post('/cart/update', [CartController::class, 'update'])->name('cart.update');
+
+    Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+    Route::get('/checkout/shipping', [CheckoutController::class, 'showShippingPage'])->name('checkout.shipping');
+    Route::post('/checkout/shipping', [CheckoutController::class, 'storeShipping'])->name('checkout.shipping.store');
+    Route::get('/checkout/payment', [CheckoutController::class, 'showPaymentPage'])->name('checkout.payment');
+    Route::post('/checkout/payment', [CheckoutController::class, 'storePayment'])->name('checkout.payment.store');
+    Route::get('/checkout/order/completed', [CheckoutController::class, 'orderCompleted'])->name('checkout.order.completed');
+    Route::post('checkout/payment/handle', [CheckoutController::class, 'handlePayment'])->name('checkout.payment.handle');
+    Route::get('/checkout/payment/process', [CheckoutController::class, 'processPayment'])->name('checkout.payment.process');
+
+
+
 });
 
 Route::middleware(['auth', CheckAdmin::class])->group(function () {
@@ -51,5 +65,8 @@ Route::middleware(['auth', CheckAdmin::class])->group(function () {
 
 Route::get('/contact', [ContactController::class, 'create'])->name('contact.create');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
+
+
 
 require __DIR__.'/auth.php';
