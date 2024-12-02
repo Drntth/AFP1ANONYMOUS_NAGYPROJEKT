@@ -11,18 +11,12 @@
     @endif
     <div class="p-4 flex flex-col flex-grow">
         <h5 class="text-xl font-bold text-gray-800">{{ $product->name }}</h5>
-        @if ($product->price == 0)
-            <p class="mt-2 font-semibold text-gray-900">Price: <span class="text-green-500">Free</span></p>
-        @elseif ($product->stock <=3 && $product->stock > 0)
+        <div class="mt-auto">
             <p class="mt-2 font-semibold text-gray-900">
                 Price: <span class="line-through text-gray-500">{{ $product->price }} €</span>
                 <span class="text-red-500 font-bold">{{ $product->sale_price }} €</span>
             </p>
-        @else
-            <p class="mt-2 font-semibold text-gray-900">Price: {{ $product->price }} €</p>
-        @endif
-        <p class="mt-2 font-semibold text-gray-900">Stock: {{ $product->stock }} pcs</p>
-        <div class="mt-auto">
+            <p class="mt-2 font-semibold text-gray-900">Stock: {{ $product->stock }} pcs</p>
             <a href="/products/{{ $product->id }}"
                 class="block mb-3 mt-3 text-center text-white px-3 py-1 rounded-md bg-slate-500 hover:bg-slate-600 focus:outline-none focus:ring-0 focus:ring-transparent active:bg-slate-600">
                 View details
