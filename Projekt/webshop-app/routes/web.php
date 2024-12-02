@@ -10,7 +10,6 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ContactController;
 
-
 Route::get('/', function () {
     $products = Product::whereBetween('stock', [1, 3])->get();
     return view('welcome' , ['products' => $products]);
@@ -20,11 +19,12 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/products', function () {
-    $products = Product::all();
-    return view('products.products' , ['products' => $products]);
-});
+Route::get('/products', [ProductController::class, 'showProducts'])->name('products.products');
 Route::get('/products/{id}', [ProductController::class, 'single'])->name('product.single');
+
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard/profile', [ProfileController::class, 'edit'])->name('profile.edit');

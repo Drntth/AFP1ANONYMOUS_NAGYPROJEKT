@@ -9,11 +9,80 @@ use Illuminate\Validation\Rule;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::all();
-        return view('products.index', ['products' => $products]); //itt lehet nem kell az s betű // de kellett
+        $category = $request->get('category');
+        $sort = $request->get('sort', 'name_asc');
+        $allowedPerPageOptions = ['4', '8', '12', '16', '20', 'all'];
+        $perPage = $request->get('per_page', 'all');
 
+        $query = Product::query();
+        if ($category) {
+            $query->where('category_id', $category);
+        }
+
+        $query->sortBy($sort);
+
+        if (!in_array($perPage, $allowedPerPageOptions)) {
+            return redirect()->route('products.index', array_merge(
+                $request->all(),
+                ['per_page' => 'all', 'category' => $category ?? '']
+            ));
+        }
+
+        if ($perPage === 'all') {
+            $products = $query->get();
+        } else {
+            $products = $query->paginate($perPage)->appends($request->all());
+        }
+
+        $categories = category_id_enum::cases();
+
+        return view('products.index', [
+            'products' => $products,
+            'categories' => $categories,
+            'sort' => $sort,
+            'perPage' => $perPage,
+            'selectedCategory' => $category,
+        ]);
+    }
+
+    public function showProducts(Request $request)
+    {
+        $category = $request->get('category');
+        $sort = $request->get('sort', 'name_asc');
+        $allowedPerPageOptions = ['4', '8', '12', '16', '20', 'all'];
+        $perPage = $request->get('per_page', 'all');
+
+        $query = Product::query();
+        if ($category) {
+            $query->where('category_id', $category);
+        }
+
+        $query->sortBy($sort);
+
+        if (!in_array($perPage, $allowedPerPageOptions)) {
+            return redirect()->route('products.products', array_merge(
+                $request->all(),
+                ['per_page' => 'all', 'category' => $category ?? '']
+            ));
+        }
+
+        if ($perPage === 'all') {
+            $products = $query->get();
+        } else {
+            $products = $query->paginate($perPage)->appends($request->all());
+        }
+
+        $categories = category_id_enum::cases();
+
+        return view('products.products', [
+            'products' => $products,
+            'categories' => $categories,
+            'sort' => $sort,
+            'perPage' => $perPage,
+            'selectedCategory' => $category,
+        ]);
     }
 
     public function add()
@@ -33,6 +102,7 @@ class ProductController extends Controller
             'name' => 'required',
             'description' => 'required',
             'price' => 'required|decimal:0,2|min:0',
+            'sale_price' => 'required|decimal:0,2|min:0',
             'category_id' => ['required', Rule::in(array_column(category_id_enum::cases(), 'value'))],
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'stock' => 'required|numeric|min:0',
@@ -62,6 +132,7 @@ class ProductController extends Controller
            'name' => 'required',
             'description' => 'required',
             'price' => 'required|decimal:0,2|min:0',
+            'sale_price' => 'required|decimal:0,2|min:0',
             'category_id' => ['required', Rule::in(array_column(category_id_enum::cases(), 'value'))],
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
             'stock' => 'required|numeric|min:0',

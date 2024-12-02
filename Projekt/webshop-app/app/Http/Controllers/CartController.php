@@ -21,10 +21,11 @@ class CartController extends Controller
         }
 
         $cart = session()->get('cart', []);
+        $price = ($product->stock < 4 && $product->stock > 0) ? $product->sale_price : $product->price;
         $cart[$product->id] = [
             'name' => $product->name,
             'quantity' => $cart[$product->id]['quantity'] ?? 1,
-            'price' => $product->price,
+            'price' => $price,
             'image' => $product->image,
         ];
 
@@ -41,8 +42,10 @@ class CartController extends Controller
             $productStock = $product->stock;
             $requestedQuantity = max(1, min($request->quantity, $productStock));
 
+            $price = ($product->stock <= 3 && $product->stock > 0) ? $product->sale_price : $product->price;
+
             $cart[$request->product_id]['quantity'] = $requestedQuantity;
-            $cart[$request->product_id]['price'] = $product->price * $requestedQuantity;
+            $cart[$request->product_id]['price'] = $price * $requestedQuantity;
 
             session()->put('cart', $cart);
             return redirect()->route('cart.index')->with('success', 'Cart updated successfully');

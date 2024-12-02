@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit product</title>    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <title>Edit product</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-custom-bg bg-auto">
+<body class="bg-custom-bg bg-fixed bg-cover">
     <div x-data="{ open: @if($errors->any()) true @else false @endif }" x-show="open" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
         <div class="bg-custom-bg p-6 rounded-lg shadow-lg w-11/12 max-w-md text-center">
             <h2 class="text-white font-bold text-xl mb-4">Errors</h2>
@@ -19,8 +20,8 @@
             <button @click="open = false" class="text-white px-3 py-1 mt-5 rounded-md bg-slate-500 hover:bg-slate-600 focus:outline-none focus:ring-0 focus:ring-transparent ring-offset-transparent active:bg-slate-600">Close</button>
         </div>
     </div>
-    <div class="max-w-xl mx-auto space-y-6 place-content-center h-screen">
-    <div class="mx-5">
+    <div class="w-11/12 max-w-xl absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
+    <div>
     <div class="p-4 shadow-2xl shadow-black rounded-lg backdrop-blur-3xl border-slate-500 border-4">
         <h1 class="text-white text-lg text-center pb-5">Edit a product</h1>
     <form method="POST" action="{{route('product.update', ['product' => $product])}}"  enctype="multipart/form-data">
@@ -37,6 +38,10 @@
         <div class="pt-2">
             <label class="text-white" for="price">Price</label>
             <input class="block mt-1 w-full rounded-md focus:border-slate-600 focus:ring-slate-600 border-2" type="text" name="price" id="price" placeholder="Price" value="{{$product->price}}">
+        </div>
+        <div class="pt-2">
+            <label class="text-white" for="price">Sale price</label>
+            <input class="block mt-1 w-full rounded-md focus:border-slate-600 focus:ring-slate-600 border-2" type="text" name="sale_price" id="sale_price" placeholder="Sale price" value="{{$product->sale_price}}">
         </div>
         <div x-data="{ open: false, selected: '{{$product->category_id}}', selectedValue: '{{$product->category_id}}' }" class="relative pt-2">
             <label class="text-white" for="category_id">Product Type</label>

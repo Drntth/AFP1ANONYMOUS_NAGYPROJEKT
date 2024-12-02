@@ -22,7 +22,16 @@
                     </div>
                     <div class="flex justify-end flex-col lg:space-x-2 lg:space-y-0">
                         <div class="text-end">
-                            <p class="text-lg font-semibold text-slate-700 mt-2">Price: {{ $product->price }} €</p>
+                            @if ($product->price == 0)
+                                <p class="mt-2 font-semibold text-gray-900">Price: <span class="text-green-600">Free</span></p>
+                            @elseif ($product->stock <=3 && $product->stock > 0)
+                                <p class="mt-2 font-semibold text-gray-900">
+                                    Price: <span class="line-through text-gray-500">{{ $product->price }} €</span>
+                                    <span class="text-red-500 font-bold">{{ $product->sale_price }} €</span>
+                                </p>
+                            @else
+                                <p class="mt-2 font-semibold text-gray-900">Price: {{ $product->price }} €</p>
+                            @endif
                             <p class="text-lg font-semibold text-slate-700">Stock: {{ $product->stock }} pcs</p>
                         </div>
                     </div>

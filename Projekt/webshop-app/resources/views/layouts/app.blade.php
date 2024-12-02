@@ -15,7 +15,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased h-screen">
-        <div class="min-h-screen flex flex-col bg-custom-bg bg-cover bg-center bg-fixed">
+        <div class="min-h-screen flex flex-col bg-custom-bg bg-cover bg-fixed">
             <x-navbar :isDashboard="request()->is('dashboard*')" :isMainPage="!request()->is('dashboard*')"/>
             <!-- Page Content -->
             <main class="flex-grow pt-4 pb-4">
