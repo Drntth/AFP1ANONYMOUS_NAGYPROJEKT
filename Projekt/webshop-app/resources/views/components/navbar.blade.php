@@ -66,15 +66,9 @@
                 @auth
                     <a href="{{ route('cart.index') }}" class="relative">
                         <i class="fa-solid fa-cart-shopping text-white"></i>
-                        @if (count(session('cart', [])) == 0)
-                            <span class="absolute -top-1 -right-2 bg-red-500 text-white text-xs rounded-full px-1">
-                                {{ count(session('cart', [])) }}
-                            </span>
-                        @else
-                            <span class="absolute -top-1 -right-2 bg-green-500 text-white text-xs rounded-full px-1">
-                                {{ count(session('cart', [])) }}
-                            </span>
-                        @endif
+                        <span class="absolute -top-1 -right-2 text-center bg-red-500 text-white text-xs rounded-full px-1">
+                            {{ count(session('cart', [])) }}
+                        </span>
                     </a>
                 @endauth
 

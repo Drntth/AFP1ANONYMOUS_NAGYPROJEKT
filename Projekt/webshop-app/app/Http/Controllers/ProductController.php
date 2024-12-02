@@ -10,40 +10,10 @@ use Illuminate\Validation\Rule;
 class ProductController extends Controller
 {
     public function index(Request $request)
-{
-    $category = $request->get('category');
-    $sort = $request->get('sort', 'name_asc');
-    $perPage = $request->get('per_page', 'all');
-
-    $query = Product::query();
-    if ($category) {
-        $query->where('category_id', $category);
-    }
-
-    $query->sortBy($sort);
-
-    if ($perPage === 'all') {
-        $products = $query->get(); // Összes termék
-    } else {
-        $perPage = (int) $perPage; // Konvertáljuk biztosan számmá
-        $products = $query->paginate($perPage)->appends($request->all());
-    }
-
-    $categories = category_id_enum::cases();
-
-    return view('products.index', [
-        'products' => $products,
-        'categories' => $categories,
-        'sort' => $sort,
-        'perPage' => $perPage,
-        'selectedCategory' => $category,
-    ]);
-}
-
-    public function showProducts(Request $request)
     {
         $category = $request->get('category');
         $sort = $request->get('sort', 'name_asc');
+        $allowedPerPageOptions = ['4', '8', '12', '16', '20', 'all'];
         $perPage = $request->get('per_page', 'all');
 
         $query = Product::query();
@@ -53,11 +23,57 @@ class ProductController extends Controller
 
         $query->sortBy($sort);
 
+        if (!in_array($perPage, $allowedPerPageOptions)) {
+            return redirect()->route('products.index', array_merge(
+                $request->all(),
+                ['per_page' => 'all', 'category' => $category ?? '']
+            ));
+        }
+
         if ($perPage === 'all') {
             $products = $query->get();
         } else {
             $products = $query->paginate($perPage)->appends($request->all());
         }
+
+        $categories = category_id_enum::cases();
+
+        return view('products.index', [
+            'products' => $products,
+            'categories' => $categories,
+            'sort' => $sort,
+            'perPage' => $perPage,
+            'selectedCategory' => $category,
+        ]);
+    }
+
+    public function showProducts(Request $request)
+    {
+        $category = $request->get('category');
+        $sort = $request->get('sort', 'name_asc');
+        $allowedPerPageOptions = ['4', '8', '12', '16', '20', 'all'];
+        $perPage = $request->get('per_page', 'all');
+
+        $query = Product::query();
+        if ($category) {
+            $query->where('category_id', $category);
+        }
+
+        $query->sortBy($sort);
+
+        if (!in_array($perPage, $allowedPerPageOptions)) {
+            return redirect()->route('products.products', array_merge(
+                $request->all(),
+                ['per_page' => 'all', 'category' => $category ?? '']
+            ));
+        }
+
+        if ($perPage === 'all') {
+            $products = $query->get();
+        } else {
+            $products = $query->paginate($perPage)->appends($request->all());
+        }
+
         $categories = category_id_enum::cases();
 
         return view('products.products', [

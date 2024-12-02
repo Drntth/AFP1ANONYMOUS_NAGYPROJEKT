@@ -1,11 +1,19 @@
-<x-app-layout>  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+<body class="bg-custom-bg bg-fixed bg-cover">
     <div x-data="{ open: @if($errors->any()) true @else false @endif }" x-show="open" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
         <div class="bg-custom-bg p-6 rounded-lg shadow-lg w-11/12 max-w-md text-center">
             <h2 class="text-white font-bold text-xl mb-4">Errors</h2>
             <div id="error-messages" class="text-white font-bold text-left ml-2">
                 <ul>
                     @foreach ($errors->all() as $error)
-                    <li>- {{ $error }}</li>
+                        <li>- {{ $error }}</li>
                     @endforeach
                 </ul>
             </div>
@@ -16,8 +24,8 @@
             </button>
         </div>
     </div>
-    <div class="max-w-xl mx-auto space-y-6 place-content-center h-screen">
-        <div class="mx-5">
+    <div class="w-11/12 max-w-xl absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
+        <div>
             <div class="p-4 shadow-2xl shadow-black rounded-lg backdrop-blur-3xl border-slate-500 border-4">
                 <h1 class="text-white text-lg text-center pb-5">Contact Us</h1>
                 <form method="POST" action="{{ route('contact.store') }}">
@@ -46,4 +54,5 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+</body>
+</html>

@@ -20,8 +20,8 @@
             <button @click="open = false" class="text-white px-3 py-1 mt-5 rounded-md bg-slate-500 hover:bg-slate-600 focus:outline-none focus:ring-0 focus:ring-transparent ring-offset-transparent active:bg-slate-600">Close</button>
         </div>
     </div>
-    <div class="max-w-xl mx-auto space-y-6 place-content-center h-screen">
-    <div class="mx-5">
+    <div class="w-11/12 max-w-xl absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
+    <div>
     <div class="p-4 shadow-2xl shadow-black rounded-lg backdrop-blur-3xl border-slate-500 border-4">
         <h1 class="text-white text-lg text-center pb-5">Edit a product</h1>
     <form method="POST" action="{{route('product.update', ['product' => $product])}}"  enctype="multipart/form-data">
