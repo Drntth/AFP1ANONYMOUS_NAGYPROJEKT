@@ -4,7 +4,7 @@
 
 **Projekt neve:** Számítógépalkatrész webáruház  
 **Verzió:** 1.0  
-**Dátum:** 2024.10.08.
+**Dátum:** 2024.12.03.
 **Készítette:** 
 
 + Plasku Dominik (AEEBES)
@@ -31,7 +31,6 @@
 ## 4. Tesztelési Környezet
 
 - Operációs rendszer: Windows 11 64-bit
-  és Windows 10 Enterprise 22H2 64-bit
 - Böngésző verzió: Opera GX: LVL 6 (core: 114.0.5282.233)
 - Szoftververzió: 
     - Laravel: 5.9.1
@@ -39,13 +38,6 @@
     - VS Code: 1.95.3
     - NPM: 10.8.2
 - Hardver: PC/Laptop
-
-Cserni Boglárka Anna tesztkörnyezete:
-- Intel Core i5-10300H
-- NVidia GeForce GTX 1650
-- 8 GB RAM
-- 256 GB NVMe M.2 SSD
-- 1 TB külső SSD ADATA Elite
 
 ## 5. Tesztesetek
 
@@ -65,14 +57,11 @@ Cserni Boglárka Anna tesztkörnyezete:
 | TC-012              | Route-ok ellenőrzése, tesztelése                        | Adott url-eket csak megfelelő jogkörrel érnek el a felhasználók           | Sikeres teszt     |               | 
 | TC-013              | Kosár: Termék mennyiség módosítása                      | A mennyiség sikeresen megváltozik, nem engedélyez helytelen mennyiséget   | Sikeres teszt     |               | 
 | TC-014              | Adatbázis feltöltése adatokkal (seeder)                 | Seedelés sikeresen megtörténik, sikeresen eltárolja az adatbázis          | Sikeres teszt     |               |
-| TC-015              | Termék módosítása, a módosított adatok frissülnek az adatbázisban                | A módosítás sikeresen megtörténik, az új adatok megjelennek az adatbázisban, a nem módosított adatok nem változnak.          | Sikeres teszt     |               |
-| TC-016              | Új termék hozzáadása a készlethez                | A termék mindeb adatával együtt sikeresen tárolódik az adatbázisban, kitöltetlen mező esetén hibát ír ki a form.        | Sikeres teszt     |               |
-| TC-017              | Termék törlése                 | A törlés sikeres a megfelelő gombra kattintva törlődik az adott termék az adatbázisból.       | Sikeres teszt     |               |
-| TC-018              | Contact form működése                 | Az üzenet a felhasználó többi adatával együtt az adatbázis megfelelő táblájába kerül. Ha egy mezőt nem töltünk ki hibát dob. Bejelentkezett felhasznáó esetén az adatait automatikusan kitölti.          | Sikeres teszt     |               |
+
 
 ## 6. Tesztelési Eredmények
 
-- **Sikeres tesztek:** 18
+- **Sikeres tesztek:** 14
 - **Sikertelen tesztek:** 0  
 - **Kérdések és észrevételek:** Nincs 
 
