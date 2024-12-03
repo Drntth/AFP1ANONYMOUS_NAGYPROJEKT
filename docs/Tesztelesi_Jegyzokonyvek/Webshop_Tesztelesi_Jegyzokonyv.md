@@ -13,7 +13,6 @@
 + Nagy Péter (TDNLEN)
 
 **Tesztelő:** Plasku Dominik
-              Cserni Boglárka Anna
 
 ## 2. Tesztelési Célok
 
